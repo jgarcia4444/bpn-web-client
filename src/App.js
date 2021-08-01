@@ -9,6 +9,7 @@ import {
 import './App.css';
 import Contact from './components/Contact';
 import Home from './components/Home';
+import Nav from './components/Nav';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <Router>
         <Container className="App">
+          <Nav />
           <Switch>
             <Route path="/contact">
               <Contact />

@@ -10,8 +10,6 @@ class Home extends Component {
 
         return (
             <Container className="home-container">
-                <h1>Blood Pressure Numbers</h1>
-                <img className="logo" src={logo} alt="Logo" />
             </Container>
         )
     }
