@@ -23,8 +23,7 @@ class App extends Component {
               <Contact />
             </Route>
             <Route path="/">
-              
-                <Home />       
+              <Home />       
             </Route>
           </Switch>
         </Container>
