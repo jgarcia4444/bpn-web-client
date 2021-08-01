@@ -1,3 +1,11 @@
+.content-link {
+    text-decoration: none;
+}
+
+.content-link:hover {
+    text-decoration: underline;
+}
+
 .logo {
     width: 25%;
     border-radius: 50%;
@@ -5,4 +13,22 @@
 
 .home-container {
     margin-top: 5%;
+}
+
+.heart-img {
+    
+}
+
+.hero-container {
+}
+
+.hero-headline {
+    margin-top: 5%;
+    font-weight: 500;
+    font-size: 3.5em;
+}
+
+.hero-subheadline {
+    font-weight: 300;
+    color: #777;
 }
