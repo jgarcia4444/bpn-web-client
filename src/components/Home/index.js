@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
 import heart from '../imgs/backgrounds/heart.png';
-import Feature from './Feature';
+import Features from './Features';
 
 class Home extends Component {
 
@@ -26,7 +26,7 @@ class Home extends Component {
                         </h4>
                     </Row>
                 </Container>
-                <Feature />
+                <Features />
             </Container>
         )
     }

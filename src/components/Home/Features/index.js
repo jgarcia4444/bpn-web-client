@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
 
-class Feature extends Component {
+class Features extends Component {
 
     render() {
 
@@ -16,4 +16,4 @@ class Feature extends Component {
     }
 }
 
-export default Feature;
+export default Features;
