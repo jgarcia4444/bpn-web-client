@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
 import ShowInputBtn from './ShowInputBtn';
+import InputForm from './InputForm';
 
 class Contact extends Component {
 
@@ -28,7 +29,7 @@ class Contact extends Component {
                     {showInputForm ? <ShowInputBtn handleShowBtnClick={this.handleShowBtnClick} show={showInputForm} /> : <ShowInputBtn handleShowBtnClick={this.handleShowBtnClick} show={showInputForm} />}
                 </Row>
                 {showInputForm &&
-                    <Row>Form</Row>
+                    <InputForm />
                 }
             </Container>
         )
