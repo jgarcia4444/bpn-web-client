@@ -9,6 +9,11 @@ import './index.css';
 
 class Features extends Component {
 
+    state = {
+        displayState: "SHOW_ALL",
+        featureToShow: ""
+    }
+
     displayFeatures = () => {
         const featureObject = [
             {
@@ -38,7 +43,7 @@ class Features extends Component {
                 { Array(4).fill(0).map((_, i) => {
                     return ( 
                         <Col key={i} sm={6}>
-                            <Feature featureDetails={featureObject[i]} />
+                            <Feature handleIconClick={this.handleIconClick} featureDetails={featureObject[i]} />
                         </Col>
                         )
                 })}
@@ -47,14 +52,45 @@ class Features extends Component {
 
     }
 
+    handleIconClick = (title) => {
+        var featureToShow = ""
+        switch(title) {
+            case "Monitor Blood Pressure":
+                featureToShow = "BP";
+                break;
+            case "Print Records":
+                featureToShow = "PRINT";
+                break;
+            case "See Averages":
+                featureToShow = "AVERAGE";
+                break;
+            case "Add Notes":
+                featureToShow = "NOTES";
+                break;
+        };
+        this.setState({
+            ...this.state,
+            displayState: 'SHOW_FEATURE',
+            featureToShow: featureToShow
+        });
+    }
+
+    displayFeature = () => {
+
+    }
+
     
 
     render() {
 
+        const feature = () => {
+
+        }
+
         return (
             <Container className="features-container">
                 <h2 className="features-title">Features</h2>
-                {this.displayFeatures()}
+                {this.state.displayState === "SHOW_ALL" ? this.displayFeatures(): this.displayFeature(feature)}
             </Container>
         )
     }
