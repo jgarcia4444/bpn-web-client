@@ -3,11 +3,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
 
-const Feature = () => {
+const Feature = ({featureDetails}) => {
+
+    const {title, shortIntro, icon} = featureDetails
 
     return (
         <Container className="feature-container">
-            <h4>Feature</h4>
+            {icon}
+            <Row><h4>{title}</h4></Row>
+            <Row><p>{shortIntro}</p></Row>
         </Container>
     )
 }
