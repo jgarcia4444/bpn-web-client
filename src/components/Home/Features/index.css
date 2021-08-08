@@ -1,3 +1,25 @@
 .features-container {
     height: 60vh;
 }
+
+.show-all-btn-container {
+    display: block;
+    width: 100px;
+    box-shadow: 0 0 2px -1px #333;
+    padding: 10px 5px;
+    background-color: #9999ff;
+    transition: font-weight 200ms, box-shadow 200ms, border-radius 200ms;
+}
+
+.show-all-btn-container:hover {
+    cursor: pointer;
+    font-weight: 900;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px #333;
+}
+
+.show-all-btn-container:active {
+    font-weight: 300;
+    border-radius: 0px;
+    box-shadow: none;
+}

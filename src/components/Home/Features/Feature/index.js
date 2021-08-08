@@ -13,8 +13,8 @@ const Feature = ({featureDetails, handleIconClick, showFullDescription}) => {
                 <div onClick={() => handleIconClick(title)} name={title} className="icon-container">
                     {icon}
                 </div>
-                <Row><h4>{title}</h4></Row>
-                <Row><p>{showFullDescription ? description : shortIntro}</p></Row>
+                <Row><h4 className="feature-title">{title}</h4></Row>
+                <Row><p className="description">{showFullDescription ? description : shortIntro}</p></Row>
             </div>
         </Container>
     )
