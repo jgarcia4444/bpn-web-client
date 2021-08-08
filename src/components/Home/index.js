@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './index.css';
 import heart from '../imgs/backgrounds/heart.png';
 import Features from './Features';
+import ScreenShots from './ScreenShots';
 
 class Home extends Component {
 
@@ -27,6 +28,7 @@ class Home extends Component {
                     </Row>
                 </Container>
                 <Features />
+                <ScreenShots />
             </Container>
         )
     }
