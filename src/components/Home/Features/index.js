@@ -114,13 +114,26 @@ class Features extends Component {
         return <Feature showFullDescription={true} handleIconClick={() => this.handleIconClick(featureObject.title)} featureDetails={featureObject} />
     }
 
-    
+    handleShowAllClick = () => {
+        this.setState({
+            ...this.state,
+            displayState: 'SHOW_ALL',
+            featureToShow: ""
+        })
+    }
 
     render() {
 
         return (
             <Container className="features-container">
-                <h2 className="features-title">Features</h2>
+                <Row>
+                    <h2 className="features-title">Features</h2>
+                    { this.state.displayState === 'SHOW_FEATURE' &&
+                        <div onClick={this.handleShowAllClick} className="show-all-btn-container">
+                            Show All
+                        </div>
+                    }   
+                </Row>                
                 {this.state.displayState === "SHOW_ALL" && this.displayFeatures() }
                 {this.state.displayState === "SHOW_FEATURE" && this.displayFeature()}
             </Container>
