@@ -16,9 +16,17 @@ class Features extends Component {
             icon: <MdBuild />
         }
 
-        return Array(4).fill(0).map((_, i) => {
-            return <Feature featureDetails={featureObject} />
-        })
+        return (
+            <Row>
+                { Array(4).fill(0).map((_, i) => {
+                    return ( 
+                        <Col sm={6}>
+                            <Feature featureDetails={featureObject} />
+                        </Col>
+                        )
+                })}
+            </Row>
+        )
 
     }
 
