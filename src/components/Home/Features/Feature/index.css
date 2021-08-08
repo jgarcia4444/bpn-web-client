@@ -10,6 +10,16 @@
     margin-left: -24px;
     background-color: #ffeeee;
     color: #ff7777;
+    transition: box-shadow 400ms;
+}
+
+.icon-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px #555;
+}
+
+.icon-container:active {
+    box-shadow: none;
 }
 
 .feature-container {
