@@ -3,9 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
 
-const Feature = ({featureDetails, handleIconClick}) => {
+const Feature = ({featureDetails, handleIconClick, showFullDescription}) => {
 
-    const {title, shortIntro, icon} = featureDetails
+    const {title, shortIntro, icon, description} = featureDetails
 
     return (
         <Container>
@@ -14,7 +14,7 @@ const Feature = ({featureDetails, handleIconClick}) => {
                     {icon}
                 </div>
                 <Row><h4>{title}</h4></Row>
-                <Row><p>{shortIntro}</p></Row>
+                <Row><p>{showFullDescription ? description : shortIntro}</p></Row>
             </div>
         </Container>
     )
