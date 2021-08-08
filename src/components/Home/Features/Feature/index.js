@@ -8,10 +8,14 @@ const Feature = ({featureDetails}) => {
     const {title, shortIntro, icon} = featureDetails
 
     return (
-        <Container className="feature-container">
-            {icon}
-            <Row><h4>{title}</h4></Row>
-            <Row><p>{shortIntro}</p></Row>
+        <Container>
+            <div className="feature-container">
+                <div className="icon-container">
+                    {icon}
+                </div>
+                <Row><h4>{title}</h4></Row>
+                <Row><p>{shortIntro}</p></Row>
+            </div>
         </Container>
     )
 }

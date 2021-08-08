@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { MdBuild } from 'react-icons/md';
+import { MdFolderOpen, MdPrint, MdDataUsage, MdSpeakerNotes } from 'react-icons/md';
 
 import Feature from './Feature';
 
@@ -10,18 +10,35 @@ import './index.css';
 class Features extends Component {
 
     displayFeatures = () => {
-        const featureObject = {
-            title: "Skill Learning",
-            shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            icon: <MdBuild />
-        }
+        const featureObject = [
+            {
+                title: "Monitor Blood Pressure",
+                shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                icon: <MdFolderOpen size={48} />
+            },
+            {
+                title: "Print Records",
+                shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                icon: <MdPrint size={48} />
+            },
+            {
+                title: "See Averages",
+                shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                icon: <MdDataUsage size={48} />
+            },
+            {
+                title: "Add Notes",
+                shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                icon: <MdSpeakerNotes size={48} />
+            }
+        ]
 
         return (
             <Row>
                 { Array(4).fill(0).map((_, i) => {
                     return ( 
-                        <Col sm={6}>
-                            <Feature featureDetails={featureObject} />
+                        <Col key={i} sm={6}>
+                            <Feature featureDetails={featureObject[i]} />
                         </Col>
                         )
                 })}
@@ -35,8 +52,8 @@ class Features extends Component {
     render() {
 
         return (
-            <Container className="feature-container">
-                <h2 className="feature-title">Features</h2>
+            <Container className="features-container">
+                <h2 className="features-title">Features</h2>
                 {this.displayFeatures()}
             </Container>
         )
