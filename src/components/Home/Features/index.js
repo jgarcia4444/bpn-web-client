@@ -83,7 +83,7 @@ class Features extends Component {
                     title: "Monitor Blood Pressure",
                     shortIntro: "Keep track of your blood pressure all in one convenient place.",
                     icon: <MdFolderOpen size={48} />,
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    description: "Monitor and track your blood pressure. This app helps you keep track of your blood pressure over time. It allows you the user to easily input your blood pressure readings. All previous records are easily found on the records screen."
                 }
                 break;
             case "PRINT":
@@ -91,7 +91,7 @@ class Features extends Component {
                     title: "Print Records",
                     shortIntro: "Need a physical copy? No problem, print out your records.",
                     icon: <MdPrint size={48} />,
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    description: "Every now and then or maybe everytime a physical copy may be needed for doctors visits and personal reference. This app makes it easy to print out all of your records and you may also filter them based off 3 different filters."
                 }
                 break;
             case "AVERAGE":
@@ -99,7 +99,7 @@ class Features extends Component {
                     title: "See Averages",
                     shortIntro: "Get an overall snapshot of your average blood pressure filtered as you choose.",
                     icon: <MdDataUsage size={48} />,
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    description: "Easily get a quick look at your average systolic and diastolic blood pressure. When on the records screen a filter can be applied (all, morning, evening). The averages displayed will be computed and changed based off the filter selected."
                 };
                 break;
             case "NOTES":
@@ -107,7 +107,7 @@ class Features extends Component {
                     title: "Add Notes",
                     shortIntro: "Write in notes, to add further detail to your blood pressure record",
                     icon: <MdSpeakerNotes size={48} />,
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    description: "Finer Details can be inserted into the blood pressure record. For example a user could have felt dizzy which led them to taking their blood pressure. Notes like these can possibly add more insight into the blood pressure record."
                 };
                 break;
         }
