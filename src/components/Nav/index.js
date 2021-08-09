@@ -21,7 +21,7 @@ const Nav = () => {
         <Container className="nav-container">
             <Row>
                 <Col sm={8}>
-                    <img className="nav-link nav-img" src={logoHorizontal} />
+                    <img alt="Horizontal Blood Pressure Numbers Logo" className="nav-link nav-img" src={logoHorizontal} />
                 </Col>
                 <Col sm={4}>
                     <Link onClick={handleOtherPageClick} className="other-page-btn" to={`/${otherPage.toLowerCase()}`}>{otherPage}</Link>

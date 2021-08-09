@@ -23,7 +23,7 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <h4 className="hero-subheadline">
-                            Nearly half of adults in the United States (108 million, or 45%) have hypertension - according to the <a className="content-link" href="https://www.cdc.gov/bloodpressure/facts.htm#:~:text=Nearly%20half%20of%20adults%20in,are%20taking%20medication%20for%20hypertension.&text=Only%20about%201%20in%204,have%20their%20condition%20under%20control." target ="_blank">CDC</a>
+                            Nearly half of adults in the United States (108 million, or 45%) have hypertension - according to the <a className="content-link" href="https://www.cdc.gov/bloodpressure/facts.htm#:~:text=Nearly%20half%20of%20adults%20in,are%20taking%20medication%20for%20hypertension.&text=Only%20about%201%20in%204,have%20their%20condition%20under%20control." target ="_blank" rel="noreferrer">CDC</a>
                         </h4>
                     </Row>
                 </Container>

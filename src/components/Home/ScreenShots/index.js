@@ -16,15 +16,15 @@ const ScreenShots = () => {
             <Row className="screen-shots-row">
                 <Col xs={4}>
                     <Row><h4>Home</h4></Row>
-                    <img className="screen-shot-img" src={homeScreen} />
+                    <img alt="Home Screen" className="screen-shot-img" src={homeScreen} />
                 </Col>
                 <Col xs={4}>
                     <Row><h4>Records</h4></Row>
-                    <img className="screen-shot-img" src={recordsScreen} />
+                    <img alt="All Records Screen" className="screen-shot-img" src={recordsScreen} />
                 </Col>
                 <Col xs={4}>
                     <Row><h4>Add Records</h4></Row>
-                    <img className="screen-shot-img" src={AddRecordScreen} />
+                    <img alt="Add Record Screen" className="screen-shot-img" src={AddRecordScreen} />
                 </Col>
             </Row>
         </Container>
