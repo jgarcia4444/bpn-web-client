@@ -67,12 +67,16 @@ class Features extends Component {
             case "Add Notes":
                 featureToShow = "NOTES";
                 break;
+            default:
+                break;
         };
-        this.setState({
-            ...this.state,
-            displayState: 'SHOW_FEATURE',
-            featureToShow: featureToShow
-        });
+        if (featureToShow !== "") {
+            this.setState({
+                ...this.state,
+                displayState: 'SHOW_FEATURE',
+                featureToShow: featureToShow
+            });
+        }
     }
 
     displayFeature = () => {
@@ -109,6 +113,14 @@ class Features extends Component {
                     icon: <MdSpeakerNotes size={48} />,
                     description: "Finer Details can be inserted into the blood pressure record. For example a user could have felt dizzy which led them to taking their blood pressure. Notes like these can possibly add more insight into the blood pressure record."
                 };
+                break;
+            default:
+                featureObject = {
+                    title: "Add Notes",
+                    shortIntro: "Write in notes, to add further detail to your blood pressure record",
+                    icon: <MdSpeakerNotes size={48} />,
+                    description: "Finer Details can be inserted into the blood pressure record. For example a user could have felt dizzy which led them to taking their blood pressure. Notes like these can possibly add more insight into the blood pressure record."
+                }
                 break;
         }
         return <Feature showFullDescription={true} handleIconClick={() => this.handleIconClick(featureObject.title)} featureDetails={featureObject} />

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
-import ShowInputBtn from './ShowInputBtn';
-import InputForm from './InputForm';
+// import ShowInputBtn from './ShowInputBtn';
+// import InputForm from './InputForm';
 
 class Contact extends Component {
 
@@ -20,7 +20,7 @@ class Contact extends Component {
 
     render() {
 
-        const { showInputForm } = this.state;
+        // const { showInputForm } = this.state;
 
         return (
             <Container>
