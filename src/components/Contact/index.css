@@ -1,0 +1,9 @@
+.email-row {
+    margin-top: 5em;
+}
+
+.forum-col {
+    margin: 5em auto;
+    border: 2px solid #000;
+    padding: 2em 0;
+}

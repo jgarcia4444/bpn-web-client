@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.download-sticker {
+  position: fixed;
+  right: 30px;
+  top: 0px;
+}
+
+.download-sticker :hover {
+  cursor: pointer;
+}

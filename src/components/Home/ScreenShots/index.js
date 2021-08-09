@@ -9,11 +9,11 @@ import './index.css';
 const ScreenShots = () => {
 
     return (
-        <Container>
+        <Container className="screen-shots-container">
             <Row>
                 <h2>Screen Shots</h2>
             </Row>
-            <Row>
+            <Row className="screen-shots-row">
                 <Col xs={4}>
                     <Row><h4>Home</h4></Row>
                     <img className="screen-shot-img" src={homeScreen} />

@@ -1,4 +1,6 @@
-
+.features-container {
+    margin-top: 5em;
+}
 
 .show-all-btn-container {
     display: block;

@@ -10,6 +10,7 @@ import './App.css';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import Nav from './components/Nav';
+import DownloadSticker from './components/imgs/download/iOSDownloadSticker.jpg';
 
 class App extends Component {
 
@@ -18,7 +19,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Container className="App">
+        <Container fluid className="App">
+          <a className="download-sticker" href="https://apps.apple.com/us/app/blood-pressure-numbers/id1534661419
+https://apps.apple.com/us/app/blood-pressure-numbers/id1534661419"><img src={DownloadSticker} alt="Download from the iOS store" /></a>
           <Nav />
           <Switch>
             <Route path="/contact">
