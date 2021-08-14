@@ -18,9 +18,7 @@ class InputForm extends Component {
     }
 
 
-    setupMessagePostOptions = (messageState) => {
-
-        const { forumMessageUsername, forumMessage } = this.state;
+    setupMessagePostOptions = ({ forumMessageUsername, forumMessage }) => {
 
         return {
             method: 'POST',
@@ -38,13 +36,21 @@ class InputForm extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
+        const { formValidated } = this;
+        const { forumMessageUsername, forumMessage } = this.state;
 
-        const { setupMessagePostOptions } = this;
-        const messagePostUrl = 'http://localhost:3000/forum-messages';
-        let messagePostOptions = setupMessagePostOptions(this.state);
-        fetch(messagePostUrl, messagePostOptions)
-            .then(res => res.json())
-            .then(data => console.log(data))
+        if (formvalidated({forumMessageUsername, forumMessage})) {
+            const { setupMessagePostOptions } = this;
+            const messagePostUrl = 'http://localhost:3000/forum-messages';
+            let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
+            fetch(messagePostUrl, messagePostOptions)
+                .then(res => res.json())
+                .then(data => console.log(data))
+        } else {
+            // handle errors
+        }
+
+        
 
     }
 
@@ -86,9 +92,6 @@ class InputForm extends Component {
 // replies to the message
 // with username and message as well
 // TODO
-// style the show form btn
-// style the form
-// create a function to handle the submit of the form 
 // with validation
 // no empty fields, username must be 4 characters, Message must be 80 (Show a counter)
 
