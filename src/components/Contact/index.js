@@ -10,18 +10,25 @@ class Contact extends Component {
 
     state = {
         showInputForm: false,
+        showFormBtnMargin: {
+            margin: '2em auto'
+        }
     }
 
     handleShowBtnClick = () => {
+        const newMargin = this.state.showInputForm === false ? '0 auto' : '2em auto';
         this.setState({
             ...this.state,
             showInputForm: !this.state.showInputForm,
-        })
+            showFormBtnMargin: {
+                margin: newMargin
+            }
+        });
     }
 
     render() {
 
-        const { showInputForm } = this.state;
+        const { showInputForm, showFormBtnMargin } = this.state;
 
         return (
             <Container>
@@ -37,7 +44,7 @@ class Contact extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <ShowInputBtn handleShowBtnClick={this.handleShowBtnClick} show={showInputForm} />
+                    <ShowInputBtn margin={showFormBtnMargin} handleShowBtnClick={this.handleShowBtnClick} show={showInputForm} />
                 </Row>
                 {showInputForm &&
                     <InputForm />

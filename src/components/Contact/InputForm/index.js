@@ -25,15 +25,19 @@ class InputForm extends Component {
             <form>
                 <Container className="input-form-container">
                     <Row className="forum-message-input-row">
-                        <Col sm={12}>
-                            <label htmlFor="forumMessageUsername">Username</label>
-                            <input id="forumMessageUsername" className="forum-message-username-input" name="forumMessageUsername" type="text" value={forumMessageUsername} onChange={handleInputChange} />
+                        <Col xs={4}>
+                            <label className="forum-input-label" htmlFor="forumMessageUsername">Username</label>
+                        </Col>
+                        <Col xs={8}>
+                            <input id="forumMessageUsername" className="forum-message-input" name="forumMessageUsername" type="text" value={forumMessageUsername} onChange={handleInputChange} />
                         </Col>
                     </Row>
                     <Row className="forum-message-input-row">
-                        <Col sm={12}>
+                        <Col xs={4}>
                             <label htmlFor="forumMessage">Message</label>
-                            <textarea id="forumMessage" onChange={handleInputChange} value={forumMessage} className="forum-message-textarea" name="forumMessage"></textarea>
+                        </Col>
+                        <Col xs={8}>
+                            <textarea className="forum-message-input" id="forumMessage" onChange={handleInputChange} value={forumMessage} name="forumMessage"></textarea>
                         </Col>
                     </Row>
                 </Container>

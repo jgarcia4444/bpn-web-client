@@ -2,10 +2,10 @@ import React from 'react';
 
 import './index.css';
 
-const ShowInputBtn = ({ show, handleShowBtnClick }) => {
+const ShowInputBtn = ({ show, handleShowBtnClick, margin }) => {
 
     return (
-        <div onClick={handleShowBtnClick} className="basic-btn show-input-btn">
+        <div style={margin} onClick={handleShowBtnClick} className="basic-btn show-input-btn">
             {show ? "Hide Form" : "Show Form"}
         </div>
     )

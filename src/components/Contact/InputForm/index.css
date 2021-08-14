@@ -1,14 +1,30 @@
 .input-form-container {
     width: 50%;
     display: block;
-    border: 1px solid #000;
     padding: 2em 0;
+    animation-name: Appear;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+}
+
+@keyframes Appear {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 .forum-message-input-row {
-
+    margin: 2em 0;
 }
 
-.forum-message-username-input {
+.forum-message-input {
+    width: 100%;
+}
 
+.forum-input-label {
+    width: 100%;
+    text-align: right;
 }
