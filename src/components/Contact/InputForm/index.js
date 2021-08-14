@@ -17,12 +17,43 @@ class InputForm extends Component {
         });
     }
 
+
+    setupMessagePostOptions = (messageState) => {
+
+        const { forumMessageUsername, forumMessage } = this.state;
+
+        return {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                forum_message_username: forumMessageUsername,
+                forum_message: forumMessage
+            })
+        };
+
+    }
+
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        const { setupMessagePostOptions } = this;
+        const messagePostUrl = 'http://localhost:3000/forum-messages';
+        let messagePostOptions = setupMessagePostOptions(this.state);
+        fetch(messagePostUrl, messagePostOptions)
+            .then(res => res.json())
+            .then(data => console.log(data))
+
+    }
+
     render() {
-        const { handleInputChange } = this;
+        const { handleInputChange, handleFormSubmit } = this;
         const { forumMessageUsername, forumMessage } = this.state;
 
         return (
-            <form>
+            <form onSubmit={handleFormSubmit}> 
                 <Container className="input-form-container">
                     <Row className="forum-message-input-row">
                         <Col xs={4}>
@@ -38,6 +69,11 @@ class InputForm extends Component {
                         </Col>
                         <Col xs={8}>
                             <textarea className="forum-message-input" id="forumMessage" onChange={handleInputChange} value={forumMessage} name="forumMessage"></textarea>
+                        </Col>
+                    </Row>
+                    <Row className="forum-message-submit-row">
+                        <Col xs={12}>
+                            <input type="submit" className="basic-btn forum-message-submit-btn" value="Post Message" />
                         </Col>
                     </Row>
                 </Container>
