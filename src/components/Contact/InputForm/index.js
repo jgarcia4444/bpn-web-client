@@ -6,7 +6,8 @@ import './index.css';
 class InputForm extends Component {
 
     state = {
-        messageUsername: ""
+        forumMessageUsername: "",
+        forumMessage: ""
     }
 
     handleInputChange = ({target}) => {
@@ -18,15 +19,21 @@ class InputForm extends Component {
 
     render() {
         const { handleInputChange } = this;
-        const { messageUsername } = this.state;
+        const { forumMessageUsername, forumMessage } = this.state;
 
         return (
             <form>
                 <Container className="input-form-container">
-                    <Row>
-                        <Col sm={6}>
-                            <label htmlFor="messageUsername">Username</label>
-                            <input name="messageUsername" type="text" value={messageUsername} onChange={handleInputChange} />
+                    <Row className="forum-message-input-row">
+                        <Col sm={12}>
+                            <label htmlFor="forumMessageUsername">Username</label>
+                            <input id="forumMessageUsername" className="forum-message-username-input" name="forumMessageUsername" type="text" value={forumMessageUsername} onChange={handleInputChange} />
+                        </Col>
+                    </Row>
+                    <Row className="forum-message-input-row">
+                        <Col sm={12}>
+                            <label htmlFor="forumMessage">Message</label>
+                            <textarea id="forumMessage" onChange={handleInputChange} value={forumMessage} className="forum-message-textarea" name="forumMessage"></textarea>
                         </Col>
                     </Row>
                 </Container>
@@ -36,9 +43,13 @@ class InputForm extends Component {
 }
 
 // What will the forum have?
-// Username
-// Message
 // replies to the message
 // with username and message as well
+// TODO
+// style the show form btn
+// style the form
+// create a function to handle the submit of the form 
+// with validation
+// no empty fields, username must be 4 characters, Message must be 80 (Show a counter)
 
 export default InputForm;

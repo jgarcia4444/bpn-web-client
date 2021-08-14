@@ -5,7 +5,7 @@ import './index.css';
 const ShowInputBtn = ({ show, handleShowBtnClick }) => {
 
     return (
-        <div onClick={handleShowBtnClick} className="show-input-btn">
+        <div onClick={handleShowBtnClick} className="basic-btn show-input-btn">
             {show ? "Hide Form" : "Show Form"}
         </div>
     )
