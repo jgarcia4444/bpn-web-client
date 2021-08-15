@@ -32,8 +32,10 @@ class InputForm extends Component {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                forum_message_username: forumMessageUsername,
-                forum_message: forumMessage
+                new_message: {
+                    forum_message_username: forumMessageUsername,
+                    forum_message: forumMessage
+                }
             })
         };
 
@@ -43,7 +45,6 @@ class InputForm extends Component {
         const { forumMessage, forumMessageUsername } = this.state;
         let usernameLengthValid = forumMessageUsername.length < 3 ? true : false;
         let forumMessageValid = forumMessage.length < 79 ? true : false;
-        console.log("TEST!!!")
         this.setState({
             ...this.state,
             errors: {
@@ -62,13 +63,20 @@ class InputForm extends Component {
 
         formValidated();
 
-        if (forumMessageLength === true && forumMessageUsernameLength === true) {
+        if (forumMessageLength === false && forumMessageUsernameLength === false) {
+            console.log("Fetch Test!")
             const { setupMessagePostOptions } = this;
-            const messagePostUrl = 'http://localhost:3000/forum-messages';
+            const messagePostUrl = 'http://localhost:3000/messages';
             let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
             fetch(messagePostUrl, messagePostOptions)
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    if (data.saved) {
+                        console.log("Success!");
+                    } else {
+                        console.log("Whoops! There was an error persisting the message.");
+                    }
+                })
         } 
     }
 

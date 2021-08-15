@@ -30,3 +30,8 @@
     width: 100%;
     text-align: right;
 }
+
+.forum-message-submit-btn {
+    background-color: #fff;
+    width: 200px;
+}
