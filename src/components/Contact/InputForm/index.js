@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css';
+import ForumError from './ForumError';
 
 class InputForm extends Component {
 
@@ -40,11 +41,12 @@ class InputForm extends Component {
 
     formValidated = () => {
         const { forumMessage, forumMessageUsername } = this.state;
-        let usernameLengthValid = forumMessageUsername.length > 3 ? true : false;
-        let forumMessageValid = forumMessage.length > 79 ? true : false;
+        let usernameLengthValid = forumMessageUsername.length < 3 ? true : false;
+        let forumMessageValid = forumMessage.length < 79 ? true : false;
+        console.log("TEST!!!")
         this.setState({
             ...this.state,
-            error: {
+            errors: {
                 forumMessageLength: forumMessageValid,
                 forumMessageUsernameLength: usernameLengthValid
             }
@@ -60,28 +62,25 @@ class InputForm extends Component {
 
         formValidated();
 
-        if (forumMessageLength === false || forumMessageUsernameLength === false) {
-            // error handling
+        if (forumMessageLength === true && forumMessageUsernameLength === true) {
+            const { setupMessagePostOptions } = this;
+            const messagePostUrl = 'http://localhost:3000/forum-messages';
+            let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
+            fetch(messagePostUrl, messagePostOptions)
+                .then(res => res.json())
+                .then(data => console.log(data))
         } 
-
-        const { setupMessagePostOptions } = this;
-        const messagePostUrl = 'http://localhost:3000/forum-messages';
-        let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
-        fetch(messagePostUrl, messagePostOptions)
-            .then(res => res.json())
-            .then(data => console.log(data))
-
-        
-
     }
 
     render() {
         const { handleInputChange, handleFormSubmit } = this;
-        const { forumMessageUsername, forumMessage } = this.state;
+        const { forumMessageUsername, forumMessage, errors } = this.state;
+        const { forumMessageLength, forumMessageUsernameLength } = errors;
 
         return (
             <form onSubmit={handleFormSubmit}> 
                 <Container className="input-form-container">
+                    {forumMessageUsernameLength && <ForumError errorType="USERNAME" />}
                     <Row className="forum-message-input-row">
                         <Col xs={4}>
                             <label className="forum-input-label" htmlFor="forumMessageUsername">Username</label>
@@ -90,6 +89,7 @@ class InputForm extends Component {
                             <input id="forumMessageUsername" className="forum-message-input" name="forumMessageUsername" type="text" value={forumMessageUsername} onChange={handleInputChange} />
                         </Col>
                     </Row>
+                    {forumMessageLength && <ForumError errorType="MESSAGE" />}
                     <Row className="forum-message-input-row">
                         <Col xs={4}>
                             <label htmlFor="forumMessage">Message</label>
@@ -113,7 +113,6 @@ class InputForm extends Component {
 // replies to the message
 // with username and message as well
 // TODO
-// with validation
-// no empty fields, username must be 4 characters, Message must be 80 (Show a counter)
+//  Message must be 80 (Show a counter)
 
 export default InputForm;
