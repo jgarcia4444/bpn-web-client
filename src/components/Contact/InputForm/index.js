@@ -7,7 +7,11 @@ class InputForm extends Component {
 
     state = {
         forumMessageUsername: "",
-        forumMessage: ""
+        forumMessage: "",
+        errors: {
+            forumMessageLength: false,
+            forumMessageUsernameLength: false
+        }
     }
 
     handleInputChange = ({target}) => {
@@ -34,21 +38,38 @@ class InputForm extends Component {
 
     }
 
+    formValidated = () => {
+        const { forumMessage, forumMessageUsername } = this.state;
+        let usernameLengthValid = forumMessageUsername.length > 3 ? true : false;
+        let forumMessageValid = forumMessage.length > 79 ? true : false;
+        this.setState({
+            ...this.state,
+            error: {
+                forumMessageLength: forumMessageValid,
+                forumMessageUsernameLength: usernameLengthValid
+            }
+        });
+    }
+
     handleFormSubmit = (e) => {
         e.preventDefault();
         const { formValidated } = this;
-        const { forumMessageUsername, forumMessage } = this.state;
+        const { forumMessageUsername, forumMessage, errors } = this.state;
 
-        if (formvalidated({forumMessageUsername, forumMessage})) {
-            const { setupMessagePostOptions } = this;
-            const messagePostUrl = 'http://localhost:3000/forum-messages';
-            let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
-            fetch(messagePostUrl, messagePostOptions)
-                .then(res => res.json())
-                .then(data => console.log(data))
-        } else {
-            // handle errors
-        }
+        const { forumMessageLength, forumMessageUsernameLength } = errors;
+
+        formValidated();
+
+        if (forumMessageLength === false || forumMessageUsernameLength === false) {
+            // error handling
+        } 
+
+        const { setupMessagePostOptions } = this;
+        const messagePostUrl = 'http://localhost:3000/forum-messages';
+        let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
+        fetch(messagePostUrl, messagePostOptions)
+            .then(res => res.json())
+            .then(data => console.log(data))
 
         
 
