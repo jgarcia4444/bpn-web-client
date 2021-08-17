@@ -18,17 +18,18 @@ class Forum extends Component {
         fetch('http://localhost:3000/messages')
             .then(res => res.json())
             .then(data => {
-                this.setState({
-                    ...this.state,
-                    messages: data.messages
-                })
+                console.log(data);
+                return;
+                // this.setState({
+                //     ...this.state,
+                //     messages: data.messages
+                // })
             })
     }
 
     renderMessages = () => {
 
         const { messages } = this.state;
-        console.log("TEST!!");
         if (messages.length > 0) {
             messages.map(message => {
                 <Message messageObject={message} />

@@ -10,8 +10,8 @@ class InputForm extends Component {
         forumMessageUsername: "",
         forumMessage: "",
         errors: {
-            forumMessageLength: false,
-            forumMessageUsernameLength: false
+            forumMessageLengthErr: false,
+            forumMessageUsernameLengthErr: false
         }
     }
 
@@ -33,8 +33,8 @@ class InputForm extends Component {
             },
             body: JSON.stringify({
                 new_message: {
-                    forum_message_username: forumMessageUsername,
-                    forum_message: forumMessage
+                    username: forumMessageUsername,
+                    message: forumMessage
                 }
             })
         };
@@ -43,15 +43,18 @@ class InputForm extends Component {
 
     formValidated = () => {
         const { forumMessage, forumMessageUsername } = this.state;
-        let usernameLengthValid = forumMessageUsername.length < 3 ? true : false;
-        let forumMessageValid = forumMessage.length < 79 ? true : false;
+        let usernameLength = forumMessageUsername.length < 3 ? true : false;
+        let forumMessageLength = forumMessage.length < 79 ? true : false;
         this.setState({
             ...this.state,
             errors: {
-                forumMessageLength: forumMessageValid,
-                forumMessageUsernameLength: usernameLengthValid
+                forumMessageLengthErr: forumMessageLength,
+                forumMessageUsernameLengthErr: usernameLength
             }
         });
+        return {
+            hasError: (usernameLength === true || forumMessageLength === true) ? true : false
+        }
     }
 
     handleFormSubmit = (e) => {
@@ -59,12 +62,9 @@ class InputForm extends Component {
         const { formValidated } = this;
         const { forumMessageUsername, forumMessage, errors } = this.state;
 
-        const { forumMessageLength, forumMessageUsernameLength } = errors;
+        let validator = formValidated();
 
-        formValidated();
-
-        if (forumMessageLength === false && forumMessageUsernameLength === false) {
-            console.log("Fetch Test!")
+        if (!validator.hasError) {
             const { setupMessagePostOptions } = this;
             const messagePostUrl = 'http://localhost:3000/messages';
             let messagePostOptions = setupMessagePostOptions({forumMessage, forumMessageUsername});
@@ -83,12 +83,12 @@ class InputForm extends Component {
     render() {
         const { handleInputChange, handleFormSubmit } = this;
         const { forumMessageUsername, forumMessage, errors } = this.state;
-        const { forumMessageLength, forumMessageUsernameLength } = errors;
+        const { forumMessageLengthErr, forumMessageUsernameLengthErr } = errors;
 
         return (
             <form onSubmit={handleFormSubmit}> 
                 <Container className="input-form-container">
-                    {forumMessageUsernameLength && <ForumError errorType="USERNAME" />}
+                    {forumMessageUsernameLengthErr && <ForumError errorType="USERNAME" />}
                     <Row className="forum-message-input-row">
                         <Col xs={4}>
                             <label className="forum-input-label" htmlFor="forumMessageUsername">Username</label>
@@ -97,7 +97,7 @@ class InputForm extends Component {
                             <input id="forumMessageUsername" className="forum-message-input" name="forumMessageUsername" type="text" value={forumMessageUsername} onChange={handleInputChange} />
                         </Col>
                     </Row>
-                    {forumMessageLength && <ForumError errorType="MESSAGE" />}
+                    {forumMessageLengthErr && <ForumError errorType="MESSAGE" />}
                     <Row className="forum-message-input-row">
                         <Col xs={4}>
                             <label htmlFor="forumMessage">Message</label>
