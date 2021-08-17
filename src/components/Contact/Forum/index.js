@@ -18,22 +18,18 @@ class Forum extends Component {
         fetch('http://localhost:3000/messages')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                return;
-                // this.setState({
-                //     ...this.state,
-                //     messages: data.messages
-                // })
+                this.setState({
+                    ...this.state,
+                    messages: data.messages
+                })
             })
     }
 
     renderMessages = () => {
-
         const { messages } = this.state;
         if (messages.length > 0) {
-            messages.map(message => {
-                <Message messageObject={message} />
-            })
+            console.log(messages);
+            return messages.map( (message, id) => <Message key={`${id}-${message.username}`} messageObject={message} /> )
         }
     }
 
@@ -45,6 +41,7 @@ class Forum extends Component {
             <Container className="forum-wrapper-container">
                 <h2 className="forum-title">Forum</h2>
                 <Container className="forum-container">
+                    Test
                     {renderMessages()}
                 </Container>
             </Container>
