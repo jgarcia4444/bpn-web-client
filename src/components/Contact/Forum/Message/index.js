@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css'
 import ReplyFormBtn from './ReplyFormBtn';
+import ReplyForm from './ReplyForm';
 
 class Message extends Component {
 
@@ -36,6 +37,9 @@ class Message extends Component {
                 </Row>
                 <Row>
                     <ReplyFormBtn handleClick={this.handleShowClick} show={willReply} />
+                </Row>
+                <Row>
+                    {willReply && <ReplyForm />}
                 </Row>
             </Container>
         )
