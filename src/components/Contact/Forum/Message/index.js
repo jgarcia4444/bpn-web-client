@@ -10,6 +10,13 @@ class Message extends Component {
         willReply: false
     }
 
+    handleShowClick = () => {
+        this.setState({
+            ...this.state,
+            willReply: !this.state.willReply
+        })
+    }
+
     render() {
 
         const { willReply } = this.state;
@@ -28,7 +35,7 @@ class Message extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <ReplyFormBtn show={willReply} />
+                    <ReplyFormBtn handleClick={this.handleShowClick} show={willReply} />
                 </Row>
             </Container>
         )

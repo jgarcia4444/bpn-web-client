@@ -2,11 +2,11 @@ import React from 'react';
 
 import './index.css';
 
-const ReplyFormBtn = () => {
+const ReplyFormBtn = ({show, handleClick}) => {
 
     return (
-        <div className="reply-form-btn-container">
-            Reply
+        <div onClick={handleClick} className="reply-form-btn-container">
+            { show ? "Hide" : "Show" } Message Form
         </div>
     )
 }
