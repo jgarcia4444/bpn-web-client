@@ -5,8 +5,6 @@ import './index.css';
 import Message from './Message';
 
 // Sprint Plan 08/18/21 5:33 pm 
-// Style the forum as plain container no border
-// Style Messages as a transparent card.
 // Create the replies form that appears if someone wants to reply to a forum message
 // at the bottom of the message show the number of replies on the message and add a show btn that displays them 
 

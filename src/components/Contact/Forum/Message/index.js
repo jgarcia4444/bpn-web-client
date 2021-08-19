@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import './index.css'
+import ReplyFormBtn from './ReplyFormBtn';
 
 class Message extends Component {
 
-    componentDidMount() {
-        console.log("TEST!!!");
+    state = {
+        willReply: false
     }
 
     render() {
 
+        const { willReply } = this.state;
         const {messageObject} = this.props;
         const {username, message} = messageObject;
         return (
@@ -24,6 +26,9 @@ class Message extends Component {
                     <Col className="message-column" sm={8}>
                         {message}
                     </Col>
+                </Row>
+                <Row>
+                    <ReplyFormBtn show={willReply} />
                 </Row>
             </Container>
         )
