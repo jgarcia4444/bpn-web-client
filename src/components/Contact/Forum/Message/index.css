@@ -1,0 +1,11 @@
+.message-column {
+    margin: 0 auto;
+    word-break: break-all;
+    text-align: left;
+}
+
+.message-container {
+    border-bottom: 1px solid #000;
+    padding: 3em 0 2em 0;
+    box-shadow: 0 3px 2px -2px #000;
+}

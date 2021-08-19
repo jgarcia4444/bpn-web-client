@@ -4,6 +4,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './index.css';
 import Message from './Message';
 
+// Sprint Plan 08/18/21 5:33 pm 
+// Style the forum as plain container no border
+// Style Messages as a transparent card.
+// Create the replies form that appears if someone wants to reply to a forum message
+// at the bottom of the message show the number of replies on the message and add a show btn that displays them 
+
 class Forum extends Component {
 
     state = {
@@ -28,7 +34,6 @@ class Forum extends Component {
     renderMessages = () => {
         const { messages } = this.state;
         if (messages.length > 0) {
-            console.log(messages);
             return messages.map( (message, id) => <Message key={`${id}-${message.username}`} messageObject={message} /> )
         }
     }
@@ -40,10 +45,7 @@ class Forum extends Component {
         return (
             <Container className="forum-wrapper-container">
                 <h2 className="forum-title">Forum</h2>
-                <Container className="forum-container">
-                    Test
-                    {renderMessages()}
-                </Container>
+                {renderMessages()}
             </Container>
         )
     }
