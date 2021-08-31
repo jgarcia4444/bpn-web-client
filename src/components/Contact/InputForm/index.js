@@ -12,14 +12,36 @@ class InputForm extends Component {
         errors: {
             forumMessageLengthErr: false,
             forumMessageUsernameLengthErr: false
-        }
+        },
+        charsRemaining: 80,
     }
 
     handleInputChange = ({target}) => {
+        var charsRemaining = this.state.charsRemaining;
+        if (target.name === 'forumMessage') {
+            charsRemaining = this.calculateCharsRemaining();
+        }
         this.setState({
             ...this.state,
-            [target.name]: target.value
+            [target.name]: target.value,
+            charsRemaining: charsRemaining
         });
+    }
+
+    calculateCharsRemaining = () => {
+        let { forumMessage } = this.state;
+        if (forumMessage.length === 0) {
+            // Test why the chars counter does not go back to 80 when all chars are deleted.
+            return 80;
+        }
+        let minChars = 80;
+        let messageLength = forumMessage.length;
+        let difference = minChars - messageLength;
+        if (difference < 0) {
+            return 0;
+        } else {
+            return difference;
+        }
     }
 
 
@@ -82,7 +104,7 @@ class InputForm extends Component {
 
     render() {
         const { handleInputChange, handleFormSubmit } = this;
-        const { forumMessageUsername, forumMessage, errors } = this.state;
+        const { forumMessageUsername, forumMessage, errors, charsRemaining } = this.state;
         const { forumMessageLengthErr, forumMessageUsernameLengthErr } = errors;
 
         return (
@@ -104,6 +126,7 @@ class InputForm extends Component {
                         </Col>
                         <Col xs={8}>
                             <textarea className="forum-message-input" id="forumMessage" onChange={handleInputChange} value={forumMessage} name="forumMessage"></textarea>
+                            <div className="char-counter-container">{charsRemaining}</div>
                         </Col>
                     </Row>
                     <Row className="forum-message-submit-row">
