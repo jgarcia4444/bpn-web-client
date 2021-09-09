@@ -2,6 +2,6 @@
 
 ## Home Page
 
-### Home Page - (Mobile)
+### Mobile
 
-[ ] - Nav Bar logo and other page btn need to be centered
+- [ ] Nav Bar logo and other page btn need to be centered
