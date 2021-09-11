@@ -7,3 +7,48 @@
     border: 2px solid #000;
     padding: 2em 0;
 }
+
+.forum-info-h4-1, .forum-info-h4-2 {
+
+}
+
+.forum-info-h4-1 {
+    text-align: right;
+}
+.forum-info-h4-2 {
+    text-align: left;
+}
+
+.forum-info-title-separator {
+    height: 100%;
+    width: 8px;
+    border: 2px solid #000;
+    margin: 0 auto;
+    background-color: #7f7f7f;
+    box-shadow: 0 0 3px -1px #777;
+}
+
+.forum-info {
+    width: 75;
+    text-align: left;
+    background-color: #ff7777;
+    padding: 2em;
+    box-shadow: 0 0 3px -1px #333;
+    color: #fff;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .forum-info-h4-1 {
+        text-align: center;
+        margin-bottom: 0.85em;
+    }
+    .forum-info-h4-2 {
+        text-align: center;
+        margin-top: 0.85em;
+    }
+    .forum-info-title-separator {
+        width: 50%;
+        height: 8px;
+    }
+}

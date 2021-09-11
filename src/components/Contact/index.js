@@ -44,6 +44,30 @@ class Contact extends Component {
                     </Col>
                 </Row>
                 <Row>
+                    <Container className="forum-info-container">
+                        <Row>
+                            <Col md={5}>
+                                <h4 className="forum-info-h4-1">
+                                    Do you have any questions about the app?
+                                </h4>
+                            </Col>
+                            <Col md={2}>
+                                <div className="forum-info-title-separator">
+
+                                </div>
+                            </Col>
+                            <Col md={5}>
+                                <h4 className="forum-info-h4-2">
+                                    Or any suggestions?
+                                </h4>
+                            </Col>
+                        </Row>
+                        <p className="forum-info">
+                            If you can answer yes to either of these questions tap the show form button down below to display the message input form. Fill out the input fields correctly and it will post to our forum. We will do our best to get back to you within one day.
+                        </p>
+                    </Container>
+                </Row>
+                <Row>
                     <ShowInputBtn margin={showFormBtnMargin} handleShowBtnClick={this.handleShowBtnClick} show={showInputForm} />
                 </Row>
                 {showInputForm &&
