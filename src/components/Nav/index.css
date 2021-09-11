@@ -10,3 +10,11 @@
 .other-page-btn {
     width: 50%;
 }
+
+
+@media (max-width: 575px) {
+    .nav-img, .other-page-btn {
+        margin: 1em auto;
+    }
+}
+

@@ -21,10 +21,14 @@ const Nav = () => {
         <Container className="nav-container">
             <Row>
                 <Col sm={8}>
-                    <img alt="Horizontal Blood Pressure Numbers Logo" className="nav-link nav-img" src={logoHorizontal} />
+                    <div className="logo-wrapper">
+                        <img alt="Horizontal Blood Pressure Numbers Logo" className="nav-link nav-img" src={logoHorizontal} />
+                    </div>
                 </Col>
                 <Col sm={4}>
-                    <Link onClick={handleOtherPageClick} className="basic-btn other-page-btn" to={`/${otherPage.toLowerCase()}`}>{otherPage}</Link>
+                    <div className="nav-link-wrapper">
+                        <Link onClick={handleOtherPageClick} className="basic-btn other-page-btn" to={`/${otherPage.toLowerCase()}`}>{otherPage}</Link>
+                    </div>
                 </Col>
             </Row>
         </Container>
