@@ -45,7 +45,7 @@ class Contact extends Component {
                 </Row>
                 <Row>
                     <Container className="forum-info-container">
-                        <Row>
+                        <Row className="forum-info-title-row">
                             <Col md={5}>
                                 <h4 className="forum-info-h4-1">
                                     Do you have any questions about the app?

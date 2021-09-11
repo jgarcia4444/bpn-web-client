@@ -21,11 +21,15 @@
 
 .forum-info-title-separator {
     height: 100%;
-    width: 8px;
-    border: 2px solid #000;
+    width: 10px;
+    border: 1px solid #ffeeee;
     margin: 0 auto;
-    background-color: #7f7f7f;
+    background-color: #ff7777;
     box-shadow: 0 0 3px -1px #777;
+}
+
+.forum-info-title-row {
+    margin-bottom: 1em;
 }
 
 .forum-info {
