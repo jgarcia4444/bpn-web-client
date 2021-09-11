@@ -15,8 +15,7 @@
 .icon-container {
     width: 100px;
     padding: 10px 0px;
-    /* border-radius: 10px; */
-    box-shadow: 0 0 3px -1px #333;
+    box-shadow: 0 0 2px -1px #333;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,16 +23,18 @@
     margin-left: -24px;
     background-color: #ffeeee;
     color: #ff7777;
-    transition: box-shadow 400ms;
+    transition: box-shadow 400ms, border-radius 275ms;
 }
 
 .icon-container:hover {
     cursor: pointer;
-    box-shadow: 0 0 3px 1px #555;
+    box-shadow: 0 0 4px -2px #555;
+    border-radius: 10px;
 }
 
 .icon-container:active {
     box-shadow: none;
+    border-radius: none;
 }
 
 .feature-container {
