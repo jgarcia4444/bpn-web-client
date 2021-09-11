@@ -3,8 +3,8 @@
 ## Home Page
 
 ### General
-- [ ] Give the icons the border-radius transition on hover
-
+- [x] Give the icons the border-radius transition on hover
+- [x] Add logic to the click on the feature icon so that when an individual feature is chosen and the icon is clicked that it goes back to displaying all features.
 ### Mobile
 
 - [ ] Nav Bar logo and other page btn need to be centered

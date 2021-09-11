@@ -76,6 +76,12 @@ class Features extends Component {
                 displayState: 'SHOW_FEATURE',
                 featureToShow: featureToShow
             });
+        } else {
+            this.setState({
+                ...this.state,
+                displayState: "SHOW_ALL",
+                featureToShow: ""
+            })
         }
     }
 
@@ -123,7 +129,7 @@ class Features extends Component {
                 }
                 break;
         }
-        return <Feature showFullDescription={true} handleIconClick={() => this.handleIconClick(featureObject.title)} featureDetails={featureObject} />
+        return <Feature showFullDescription={true} handleIconClick={() => this.handleIconClick("")} featureDetails={featureObject} />
     }
 
     handleShowAllClick = () => {
