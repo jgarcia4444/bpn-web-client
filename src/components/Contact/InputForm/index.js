@@ -112,19 +112,19 @@ class InputForm extends Component {
                 <Container className="input-form-container">
                     {forumMessageUsernameLengthErr && <ForumError errorType="USERNAME" />}
                     <Row className="forum-message-input-row">
-                        <Col xs={4}>
+                        <Col sm={4}>
                             <label className="forum-input-label" htmlFor="forumMessageUsername">Username</label>
                         </Col>
-                        <Col xs={8}>
+                        <Col sm={8}>
                             <input id="forumMessageUsername" className="forum-message-input" name="forumMessageUsername" type="text" value={forumMessageUsername} onChange={handleInputChange} />
                         </Col>
                     </Row>
                     {forumMessageLengthErr && <ForumError errorType="MESSAGE" />}
                     <Row className="forum-message-input-row">
-                        <Col xs={4}>
+                        <Col sm={4}>
                             <label htmlFor="forumMessage">Message</label>
                         </Col>
-                        <Col xs={8}>
+                        <Col sm={8}>
                             <textarea className="forum-message-input" id="forumMessage" onChange={handleInputChange} value={forumMessage} name="forumMessage"></textarea>
                             <div className={`char-counter-container ${charsRemaining > 0 && "red"}`}>{charsRemaining}</div>
                         </Col>
