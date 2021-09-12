@@ -51,10 +51,12 @@ class Forum extends Component {
         const { renderMessages } = this;
 
         return (
-            <Container className="forum-wrapper-container">
+            <>
                 <h2 className="forum-title">Forum</h2>
-                {renderMessages()}
-            </Container>
+                <Container className="forum-wrapper-container">
+                    {renderMessages()}
+                </Container>
+            </>
         )
     }
 }

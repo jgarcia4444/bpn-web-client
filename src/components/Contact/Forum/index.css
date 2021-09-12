@@ -1,6 +1,12 @@
 
 .forum-wrapper-container {
     margin: 2em auto;
+    width: 80%;
+    box-shadow: 0 0 3px -1px #333, inset 0 0 3px -1px #333;
+    border: 1px solid #ff7777;
+    padding: 2em;
+    height: 400px;
+    overflow-y: auto;
 }
 
 

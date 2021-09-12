@@ -18,6 +18,7 @@
 - [x] Scrap Replies will do from backend - (down the line create a separate page or microsite to reply to forum messages.)
 - [x] Add color transition to the character counter for the message (red when not enough chars and green when the minimum has been reached.)
 - [ ] Remove the forum coming soon banner after setting up a heroku backend.
+- [ ] Style messages and replies
 <!-- - [ ] Fix the charsRemaining counting it is lagging behind by one when dleting all chars. -->
 
 ### Mobile
