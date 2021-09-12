@@ -126,7 +126,7 @@ class InputForm extends Component {
                         </Col>
                         <Col xs={8}>
                             <textarea className="forum-message-input" id="forumMessage" onChange={handleInputChange} value={forumMessage} name="forumMessage"></textarea>
-                            <div className="char-counter-container">{charsRemaining}</div>
+                            <div className={`char-counter-container ${charsRemaining > 0 && "red"}`}>{charsRemaining}</div>
                         </Col>
                     </Row>
                     <Row className="forum-message-submit-row">

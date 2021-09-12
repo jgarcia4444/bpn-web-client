@@ -1,3 +1,8 @@
+
+.char-counter-container {
+    color: #00ff00;
+}
+
 .input-form-container {
     width: 50%;
     display: block;
@@ -34,4 +39,8 @@
 .forum-message-submit-btn {
     background-color: #fff;
     width: 200px;
+}
+
+.red {
+    color:#ff0000;
 }
