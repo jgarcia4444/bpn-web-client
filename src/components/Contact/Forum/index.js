@@ -11,7 +11,8 @@ import Message from './Message';
 class Forum extends Component {
 
     state = {
-        messages: []
+        messages: [],
+        replies: []
     }
 
     componentDidMount() {
@@ -22,17 +23,26 @@ class Forum extends Component {
         fetch('http://localhost:3000/messages')
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 this.setState({
                     ...this.state,
-                    messages: data.messages
+                    messages: data.messages,
+                    replies: data.replies
                 })
             })
     }
 
     renderMessages = () => {
-        const { messages } = this.state;
+        const { messages, replies } = this.state;
         if (messages.length > 0) {
-            return messages.map( (message, id) => <Message key={`${id}-${message.username}`} messageObject={message} /> )
+            return messages.map( (message, id) => {
+                let messageReplies = replies.filter(reply => reply.message_id === message.id);
+                let messageObject = {
+                    message: message,
+                    replies: messageReplies
+                }
+                return <Message key={`${id}-${message.username}`} messageObject={messageObject} /> 
+            })
         }
     }
 

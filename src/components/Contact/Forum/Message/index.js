@@ -4,43 +4,34 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './index.css'
 import ReplyFormBtn from './ReplyFormBtn';
 import ReplyForm from './ReplyForm';
+import Reply from './Reply';
 
 class Message extends Component {
 
-    state = {
-        willReply: false
-    }
-
-    handleShowClick = () => {
-        this.setState({
-            ...this.state,
-            willReply: !this.state.willReply
-        })
+    renderReplies = () => {
+        const { replies } = this.props.messageObject;
+        return replies.map(reply => <Reply replyObject={reply} />)
     }
 
     render() {
 
-        const { willReply } = this.state;
         const {messageObject} = this.props;
-        const {username, message} = messageObject;
+        const {message} = messageObject;
+        
         return (
             <Container className="message-container">
                 <Row>
                     <Col className="username-column" sm={4}>
-                        {username}
+                        {message.username}
                     </Col>
                 </Row>
                 <Row>
                     <Col className="message-column" sm={8}>
-                        {message}
+                        {message.message}
                     </Col>
                 </Row>
-                <Row>
-                    <ReplyFormBtn handleClick={this.handleShowClick} show={willReply} />
-                </Row>
-                <Row>
-                    {willReply && <ReplyForm />}
-                </Row>
+                {this.renderReplies()}
+
             </Container>
         )
     }

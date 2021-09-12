@@ -15,7 +15,7 @@
 
 ### General 
 - [x] Explain adding a message to the form in detail
-- [ ] Finish the replies form styling, content, and logic
+- [x] Scrap Replies will do from backend - (down the line create a separate page or microsite to reply to forum messages.)
 - [ ] Add color transition to the character counter for the message (red when not enough chars and green when the minimum has been reached.)
 - [ ] Remove the forum coming soon banner
 
