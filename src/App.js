@@ -10,11 +10,10 @@ import './App.css';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import Nav from './components/Nav';
-import DownloadSticker from './components/imgs/download/iOSDownloadSticker.jpg';
+import Health from './components/Health';
+
 
 class App extends Component {
-
-
 
   render() {
     return (
@@ -23,7 +22,9 @@ class App extends Component {
           <Nav />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/health" element={<Health />} />
             <Route path="/contact" element={<Contact />}/>
+
           </Routes>
         </div>
       </Router>
