@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink as Link } from 'react-router-dom';
+import {FiUser} from 'react-icons/fi';
 
 import '../../styles/Nav/index.css';
+
+import NavItem from './NavItem';
 
 import Logo from '../../assets/logo/BPN.png';
 const Nav = () => {
@@ -15,6 +18,8 @@ const Nav = () => {
             </div>
         )
     }
+
+    const navLinks = [<NavItem label="Health" to='/health' />, <NavItem label="forum" to="/forum" />, <NavItem label="Contact" to="/contact"/>, <NavItem label="" icon={<FiUser />} />];
 
     return (
         <div className="navContainer">
