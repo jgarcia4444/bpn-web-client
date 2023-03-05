@@ -1,0 +1,16 @@
+
+
+.navItemContainer {
+    margin: 0 3vw;
+    padding: 1vh 2vh;
+    border-radius: 5px;
+    transition: all 400ms ease-out;
+    font-weight: 900;
+}
+
+.navItemContainer:hover {
+    background-color: #f00;
+    box-shadow: 0 0 5px -2px black;
+    cursor: pointer;
+    color: #fff;
+}

@@ -9,6 +9,8 @@ import NavItem from './NavItem';
 import Logo from '../../assets/logo/BPN.png';
 const Nav = () => {
 
+    const [iconColor, setIconColor] = useState('#000');
+
     const logoHeader = () => {
         return (
             <div className="logoHeaderButton">
@@ -19,13 +21,27 @@ const Nav = () => {
         )
     }
 
+    const changeIconColorToWhite = isIcon => {
+        console.log("Change Icon Color");
+        if (isIcon === true) {
+            setIconColor("#fff");
+        }
+    }
+
+    const changeIconColorToBlack = isIcon => {
+        console.log("Change Icon Color");
+        if (isIcon === true) {
+            setIconColor("#000");
+        }
+    }
 
 
-    const navLinks = [{label: "Health", to: "/health"}, {label: "Forum", to: "/forum"}, {label: "Contact", to: "/contact"}, {label: "", to: "#", icon: <FiUser color={"#000"} size={20} />}]
+
+    const navLinks = [{label: "Health", to: "/health"}, {label: "Forum", to: "/forum"}, {label: "Contact", to: "/contact"}, {label: "", to: "#", icon: <FiUser color={iconColor} size={20} />}]
 
     const renderNavLinks = () => {
         console.log("Here are the nav links", navLinks)
-        return navLinks.map((item, i) => <NavItem key={`${i}-${item.label}`} itemInfo={item} />)
+        return navLinks.map((item, i) => <NavItem changeIconColorToWhite={changeIconColorToWhite} changeIconColorToBlack={changeIconColorToBlack} key={`${i}-${item.label}`} itemInfo={item} />)
     }
 
     return (

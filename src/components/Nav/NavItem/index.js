@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 
 import '../../../styles/Nav/NavItem/index.css';
 
-const NavItem = ({itemInfo}) => {
+const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack}) => {
 
     console.log("Here is the item Info for the nav link", itemInfo);
 
@@ -31,7 +31,12 @@ const NavItem = ({itemInfo}) => {
     }
 
     return (
-        <div onClick={handleNavClick} className="navItemContainer">
+        <div 
+            onMouseLeave={() => changeIconColorToBlack(icon !== undefined ? true : false)} 
+            onMouseEnter={() => changeIconColorToWhite(icon !== undefined ? true : false)} 
+            onClick={handleNavClick} 
+            className="navItemContainer"
+        >
                 {label !== "" && label}
                 {icon !== undefined && icon}
                 {nextLevelMenu === true &&
