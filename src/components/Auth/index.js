@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 import { useParams } from 'react-router-dom';
+import {FiUser, FiLock} from 'react-icons/fi'
 
 import FormInput from '../FormInput';
+
+import '../../styles/Auth/index.css';
 
 const Auth = () => {
 
@@ -16,18 +19,21 @@ const Auth = () => {
         label: "Email",
         value: email,
         changeFunction: val => setEmail(val),
+        icon: <FiUser color={"#fff"} size={20} />
     }
 
     const passwordInputInfo = {
         label: "Password",
         value: password,
         changeFunction: val => setPassword(val),
+        icon: <FiLock color={"#fff"} size={20} />
     }
 
     const confirmPasswordInputInfo = {
         label: "Confirm Password",
         value: confirmPassword,
         changeFunction: val => setConfirmPassword(val),
+        icon: <FiLock color={"#fff"} size={20} />
     }
 
     const inputs = [emailInputInfo, passwordInputInfo, confirmPasswordInputInfo];

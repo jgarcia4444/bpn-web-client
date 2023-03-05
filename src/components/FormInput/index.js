@@ -1,6 +1,8 @@
 import React from 'react';
 
-const FormInput = (inputInfo) => {
+import '../../styles/components/FormInput/index.css';
+
+const FormInput = ({inputInfo}) => {
 
     const {value, changeFunction, label, icon} = inputInfo;
 
@@ -19,7 +21,7 @@ const FormInput = (inputInfo) => {
             </div>
             <div className="inputValueRow">
                 {icon}
-                <input type={configureType()} value={value} onChange={changeFunction} />
+                <input className="input" type={configureType()} value={value} onChange={changeFunction} />
             </div>
         </div>
     )
