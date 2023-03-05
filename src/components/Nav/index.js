@@ -40,7 +40,6 @@ const Nav = () => {
     const navLinks = [{label: "Health", to: "/health"}, {label: "Forum", to: "/forum"}, {label: "Contact", to: "/contact"}, {label: "", to: "#", icon: <FiUser color={iconColor} size={20} />}]
 
     const renderNavLinks = () => {
-        console.log("Here are the nav links", navLinks)
         return navLinks.map((item, i) => <NavItem changeIconColorToWhite={changeIconColorToWhite} changeIconColorToBlack={changeIconColorToBlack} key={`${i}-${item.label}`} itemInfo={item} />)
     }
 

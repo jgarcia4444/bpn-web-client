@@ -4,9 +4,7 @@ import {useNavigate} from 'react-router-dom';
 
 import '../../../styles/Nav/NavItem/index.css';
 
-const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack}) => {
-
-    console.log("Here is the item Info for the nav link", itemInfo);
+const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack }) => {
 
     const {label, to, icon} = itemInfo;
 
@@ -27,7 +25,8 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack}) => 
     }
 
     const handleDropdownClick = dropdownLabel => {
-        navigate('/auth', {authState: dropdownLabel});
+        navigate('/auth', {state: {authState: dropdownLabel}});
+        changeIconColorToBlack(true);
     }
 
     return (
