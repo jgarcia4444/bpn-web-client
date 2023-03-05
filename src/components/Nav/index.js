@@ -52,14 +52,6 @@ const Nav = () => {
             <div className="rightNavContainer">
                 {renderNavLinks()}
             </div>
-            {/* <Row>
-                <Col sm={8}>
-                    <img alt="Horizontal Blood Pressure Numbers Logo" className="nav-link nav-img" src={logoHorizontal} />
-                </Col>
-                <Col sm={4}>
-                    <Link onClick={handleOtherPageClick} className="basic-btn other-page-btn" to={`/${otherPage.toLowerCase()}`}>{otherPage}</Link>
-                </Col>
-            </Row> */}
         </div>
     )
 }

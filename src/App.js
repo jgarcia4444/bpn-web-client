@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Health from './components/Health';
+import Forum from './components/Forum';
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/health" element={<Health />} />
+            <Route path="/forum" element={<Forum />} />
             <Route path="/contact" element={<Contact />}/>
 
           </Routes>

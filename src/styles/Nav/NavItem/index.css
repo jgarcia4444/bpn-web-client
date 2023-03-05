@@ -1,6 +1,38 @@
 
 
+.dropdownMenu {
+    position: absolute;
+    top: 92.5%;
+    left: 0;
+    background-color: #f00;
+    border-radius: 5px;
+    box-shadow: 0 0 3px -1px black;
+}
+
+.dropdownMenuRow {
+    padding: 1vh;
+    transition: all 400ms ease-out;
+}
+
+.dropdownMenuRow:first-child {
+    border-bottom: 2px solid #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.dropdownMenuRow:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.dropdownMenuRow:hover {
+    cursor: hover;
+    box-shadow: 0 0 5px -2px black;
+    transform: scale(1.03);
+}
+
 .navItemContainer {
+    position: relative;
     margin: 0 3vw;
     padding: 1vh 2vh;
     border-radius: 5px;
