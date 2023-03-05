@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from 'react-router-dom';
 
@@ -20,16 +20,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <a className="download-sticker" href="https://apps.apple.com/us/app/blood-pressure-numbers/id1534661419"><img src={DownloadSticker} alt="Download from the iOS store" /></a>
           <Nav />
-          <Switch>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Home />       
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />}/>
+          </Routes>
         </div>
       </Router>
     )

@@ -1,10 +1,16 @@
 import React, {useState} from 'react';
 
-import {Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import '../../../styles/Nav/NavItem/index.css';
 
-const NavItem = ({label, to, icon}) => {
+const NavItem = ({itemInfo}) => {
+
+    console.log("Here is the item Info for the nav link", itemInfo);
+
+    const {label, to, icon} = itemInfo;
+
+    const navigate = useNavigate();
 
     const [nextLevelMenu, setNextLevelMenu] = useState(false);
 
@@ -16,12 +22,12 @@ const NavItem = ({label, to, icon}) => {
                 setNextLevelMenu(true);
             }
         } else {
-            return <Navigate to={to} />
+            navigate(to);
         }
     }
 
     const handleDropdownClick = dropdownLabel => {
-        return <Navigate to={dropdownLabel} />
+        navigate(dropdownLabel);
     }
 
     return (

@@ -19,12 +19,22 @@ const Nav = () => {
         )
     }
 
-    const navLinks = [<NavItem label="Health" to='/health' />, <NavItem label="forum" to="/forum" />, <NavItem label="Contact" to="/contact"/>, <NavItem label="" icon={<FiUser />} />];
+
+
+    const navLinks = [{label: "Health", to: "/health"}, {label: "Forum", to: "/forum"}, {label: "Contact", to: "/contact"}, {label: "", to: "#", icon: <FiUser color={"#000"} size={20} />}]
+
+    const renderNavLinks = () => {
+        console.log("Here are the nav links", navLinks)
+        return navLinks.map((item, i) => <NavItem key={`${i}-${item.label}`} itemInfo={item} />)
+    }
 
     return (
         <div className="navContainer">
             <div className="leftNavContainer">
                 {logoHeader()}
+            </div>
+            <div className="rightNavContainer">
+                {renderNavLinks()}
             </div>
             {/* <Row>
                 <Col sm={8}>
