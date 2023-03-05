@@ -12,7 +12,7 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import Health from './components/Health';
 import Forum from './components/Forum';
-
+import Auth from './components/Auth';
 
 class App extends Component {
 
@@ -26,7 +26,7 @@ class App extends Component {
             <Route path="/health" element={<Health />} />
             <Route path="/forum" element={<Forum />} />
             <Route path="/contact" element={<Contact />}/>
-
+            <Route path="/auth" element={<Auth />} />
           </Routes>
         </div>
       </Router>

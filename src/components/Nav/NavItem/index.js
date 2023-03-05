@@ -27,7 +27,7 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack}) => 
     }
 
     const handleDropdownClick = dropdownLabel => {
-        navigate(dropdownLabel);
+        navigate('/auth', {authState: dropdownLabel});
     }
 
     return (
