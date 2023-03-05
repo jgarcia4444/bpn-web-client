@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from 'react-router-dom';
 
 import './App.css';
@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Container fluid className="App">
+        <div className="App">
           <a className="download-sticker" href="https://apps.apple.com/us/app/blood-pressure-numbers/id1534661419"><img src={DownloadSticker} alt="Download from the iOS store" /></a>
           <Nav />
           <Switch>
@@ -30,7 +30,7 @@ class App extends Component {
               <Home />       
             </Route>
           </Switch>
-        </Container>
+        </div>
       </Router>
     )
   }
