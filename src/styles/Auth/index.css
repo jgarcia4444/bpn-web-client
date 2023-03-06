@@ -30,6 +30,17 @@
     padding: 2vh;
 }
 
+.otherAuthClickText {
+    color: #00f;
+    font-weight: 900;
+    transition: all 400ms ease-out;
+}
+
+.otherAuthClickText:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
 .otherAuthText {
     margin: 0;
 }

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {FiUser, FiLock} from 'react-icons/fi'
 
 import FormInput from '../FormInput';
@@ -9,6 +9,7 @@ import '../../styles/Auth/index.css';
 const Auth = () => {
 
     const location = useLocation();
+    const navigate = useNavigate();
     const {state} = location;
     const {authState} = state;
 
@@ -71,7 +72,11 @@ const Auth = () => {
     }
 
     const handleOtherAuthClick = () => {
-
+        if (authState === "login") {
+            navigate('/auth', {state: {authState: 'sign-up'}});
+        } else {
+            navigate('/auth', {state: {authState: 'login'}});
+        }
     }
 
     const configureOtherAuthText = () => {
@@ -84,7 +89,7 @@ const Auth = () => {
             authClickText = "Login"
         }
         return (
-            <p className="otherAuthText">{configuredText} <span onClick={handleOtherAuthClick}>{authClickText}</span></p>
+            <p className="otherAuthText">{configuredText} <span className="otherAuthClickText" onClick={handleOtherAuthClick}>{authClickText}</span></p>
         )
     }
 
