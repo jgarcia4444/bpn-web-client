@@ -95,17 +95,26 @@ const Auth = () => {
 
     return (
         <div className="authContainer">
-            <h1>Auth</h1>
-            <div className="formContainer">
-                {renderInputs()}
-                <div className="authButtonRow">
-                    <div className="otherAuthTextContainer">
-                        {configureOtherAuthText()}
+            <div className="authContainerTitleRow">
+                <h1>Auth</h1>
+            </div>
+            <div className="pageDetailsContainer">
+                <div className="formContainer">
+                    {renderInputs()}
+                    <div className="authButtonRow">
+                        <div className="otherAuthTextContainer">
+                            {configureOtherAuthText()}
+                        </div>
+                        <div className="authButtonContainer">
+                            <button onClick={handleAuthClick} className="authButton">
+                                {configureButtonText()}
+                            </button>
+                        </div>
                     </div>
-                    <div className="authButtonContainer">
-                        <button onClick={handleAuthClick} className="authButton">
-                            {configureButtonText()}
-                        </button>
+                </div>
+                <div className="authDetailsContainer">
+                    <div className="titleRow">
+                        <h2 className="authTitle">Pros of having an account</h2>
                     </div>
                 </div>
             </div>
