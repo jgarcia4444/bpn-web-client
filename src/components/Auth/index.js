@@ -11,7 +11,7 @@ const Auth = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const {state} = location;
-    const {authState} = state;
+    const authState = state !== null ? state.authState : "login";
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -96,7 +96,7 @@ const Auth = () => {
     return (
         <div className="authContainer">
             <div className="authContainerTitleRow">
-                <h1>Auth</h1>
+                <h1 className='authContainerTitle'>{authState === "login" ? "Login" : "Sign Up"}</h1>
             </div>
             <div className="pageDetailsContainer">
                 <div className="formContainer">
@@ -115,6 +115,17 @@ const Auth = () => {
                 <div className="authDetailsContainer">
                     <div className="titleRow">
                         <h2 className="authTitle">Pros of having an account</h2>
+                    </div>
+                    <div className="accountDetailsListContainer">
+                        <ul className="accountDetailsList">
+                            <li className="listItem">Ability to post in the forum</li>
+                            <li className="listItem">
+                                Use the account created here and log into the mobile app.
+                            </li>
+                            <li className="listItem">
+                                View your saved records in different forms than the mobile app.
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
