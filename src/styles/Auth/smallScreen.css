@@ -1,0 +1,12 @@
+@media only screen and (max-width: 860px) {
+    .authDetailsContainer {
+        margin: 7vh 0;
+    }
+    .formContainer, .authDetailsContainer {
+        width: 100%;
+    }
+    .pageDetailsContainer {
+        flex-direction: column;
+    }
+
+}

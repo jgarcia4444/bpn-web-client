@@ -5,6 +5,7 @@ import {FiUser, FiLock} from 'react-icons/fi'
 import FormInput from '../FormInput';
 
 import '../../styles/Auth/index.css';
+import '../../styles/Auth/smallScreen.css';
 import '../../styles/global.css';
 
 const Auth = () => {
@@ -93,7 +94,7 @@ const Auth = () => {
             <p className="otherAuthText">{configuredText} <span className="otherAuthClickText" onClick={handleOtherAuthClick}>{authClickText}</span></p>
         )
     }
-
+//
     return (
         <div className="authContainer">
             <div className="authContainerTitleRow">
