@@ -2,6 +2,7 @@ import React from 'react';
 import {FiMail, FiUser, FiPhone} from 'react-icons/fi';
 
 import '../../styles/Contact/index.css';
+import '../../styles/Contact/smallScreen.css';
 
 const Contact = () => {
 

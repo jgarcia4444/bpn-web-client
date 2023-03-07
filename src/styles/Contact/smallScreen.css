@@ -1,0 +1,13 @@
+
+@media only screen and (max-width: 860px) {
+    .contactDetailsCol {
+        width: 100%
+    }
+    .supportDetailsContainer {
+        flex-direction: column;
+    }
+    .supportDetailsListContainer {
+        width: 100%;
+        margin: 1vh 0;
+    }
+}
