@@ -1,82 +1,58 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import {FiMail, FiUser, FiPhone} from 'react-icons/fi';
 
-import './index.css';
-import ShowInputBtn from './ShowInputBtn';
-import InputForm from './InputForm';
-import Forum from './Forum';
+import '../../styles/Contact/index.css';
 
-class Contact extends Component {
+const Contact = () => {
 
-    state = {
-        showInputForm: false,
-        showFormBtnMargin: {
-            margin: '2em auto'
-        }
-    }
-
-    handleShowBtnClick = () => {
-        const newMargin = this.state.showInputForm === false ? '0 auto' : '2em auto';
-        this.setState({
-            ...this.state,
-            showInputForm: !this.state.showInputForm,
-            showFormBtnMargin: {
-                margin: newMargin
-            }
-        });
-    }
-
-    render() {
-
-        const { showInputForm, showFormBtnMargin } = this.state;
-
-        return (
-            <Container>
-                <h1>Contact</h1>
-                <Row className="email-row">
-                    <h2>Email</h2>
-                    <h4><a href="mailto:bloodpressurenumbers2020@gmail.com">bloodpressurenumbers2020@gmail.com</a></h4>
-                </Row>
-                <Row>
-                    <Col sm={8} className="forum-col">
-                        <h2>Live Forum Coming soon</h2>
-                        <p>A live forum that support will answer is in development.</p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Container className="forum-info-container">
-                        <Row className="forum-info-title-row">
-                            <Col md={5}>
-                                <h4 className="forum-info-h4-1">
-                                    Do you have any questions about the app?
-                                </h4>
-                            </Col>
-                            <Col md={2}>
-                                <div className="forum-info-title-separator">
-
-                                </div>
-                            </Col>
-                            <Col md={5}>
-                                <h4 className="forum-info-h4-2">
-                                    Or any suggestions?
-                                </h4>
-                            </Col>
-                        </Row>
-                        <p className="forum-info">
-                            If you can answer yes to either of these questions tap the show form button down below to display the message input form. Fill out the input fields correctly and it will post to our forum. We will do our best to get back to you within one day.
-                        </p>
-                    </Container>
-                </Row>
-                <Row>
-                    <ShowInputBtn margin={showFormBtnMargin} handleShowBtnClick={this.handleShowBtnClick} show={showInputForm} />
-                </Row>
-                {showInputForm &&
-                    <InputForm />
-                }
-                <Forum />
-            </Container>
-        )
-    }
+    return (
+        <div className="contactContainer">
+            <h1 className="containerTitle">Contact</h1>
+            <div className="contactDetailsContainer">
+                <div className="row contactDetailsRow">
+                    <div className="contactDetailsCol">
+                        <div className="contactDetailsLabel">
+                            Name <FiUser color={'#fff'} size={24}/>
+                        </div>
+                        <p className="contactDetailsValue">Jake Garcia</p>
+                    </div>
+                </div>
+                <div className="row contactDetailsRow">
+                    <div className="contactDetailsCol">
+                        <div className="contactDetailsLabel">
+                            Email <FiMail color={'#fff'} size={24} />
+                        </div>
+                        <p className="contactDetailsValue"><a href="mailto:bloodpressurenumbers2020@gmail.com" className="anchor">bloodpressurenumbers2020@gmail.com</a></p>
+                    </div>
+                    <div className="contactDetailsCol">
+                        <div className="contactDetailsLabel">
+                            Phone <FiPhone color={'#fff'} size={24}/>
+                        </div>
+                        <p className="contactDetailsValue"><a className="anchor" href="tel:760-892-4561">(760) 892-4561</a></p>
+                    </div>
+                </div>
+            </div>
+            <div className="supportContainer">
+                <h1 className="containerTitle">Support</h1>
+                <div className="supportDetailsContainer">
+                    <div className="supportDetailsListContainer">
+                        <ul className="supportDetailsList">
+                            <li className="supportDetailsItem">
+                                Checked at 8am and 5pm PST.
+                            </li>
+                            <li className="supportDetailsItem">
+                                Morning Replies 12:00pm PST
+                            </li>
+                            <li className="supportDetailsItem">
+                                Evening Replies 8:00pm PST
+                            </li>
+                        </ul>
+                        <span className="disclaimer">* All emails will not be replied at the exact times stated above they are estimates.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Contact;

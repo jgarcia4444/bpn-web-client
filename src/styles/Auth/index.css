@@ -6,6 +6,12 @@
     font-weight: 900;
     padding: 0.5vh 1vw;
     border-radius: 5px;
+    transition: all 400ms ease-out;
+}
+
+.authButton:hover {
+    box-shadow: 0 0 3px -1px black;
+    transform: scale(1.05);
 }
 
 .authButtonRow {
@@ -75,13 +81,13 @@
 
 .otherAuthClickText {
     color: #00f;
-    font-weight: 900;
+    font-weight: 300;
     transition: all 400ms ease-out;
 }
 
 .otherAuthClickText:hover {
     cursor: pointer;
-    transform: scale(1.03);
+    font-weight: 900;
 }
 
 .otherAuthText {

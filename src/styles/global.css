@@ -1,0 +1,12 @@
+
+.containerTitle {
+    color: #f00;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}

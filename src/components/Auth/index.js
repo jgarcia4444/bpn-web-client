@@ -5,6 +5,7 @@ import {FiUser, FiLock} from 'react-icons/fi'
 import FormInput from '../FormInput';
 
 import '../../styles/Auth/index.css';
+import '../../styles/global.css';
 
 const Auth = () => {
 
@@ -21,21 +22,21 @@ const Auth = () => {
     const emailInputInfo = {
         label: "Email",
         value: email,
-        changeFunction: val => setEmail(val),
+        changeFunction: e => setEmail(e.target.value),
         icon: <FiUser color={"#fff"} size={20} />
     }
 
     const passwordInputInfo = {
         label: "Password",
         value: password,
-        changeFunction: val => setPassword(val),
+        changeFunction: e => setPassword(e.target.value),
         icon: <FiLock color={"#fff"} size={20} />
     }
 
     const confirmPasswordInputInfo = {
         label: "Confirm Password",
         value: confirmPassword,
-        changeFunction: val => setConfirmPassword(val),
+        changeFunction: e => setConfirmPassword(e.target.value),
         icon: <FiLock color={"#fff"} size={20} />
     }
 
@@ -96,7 +97,7 @@ const Auth = () => {
     return (
         <div className="authContainer">
             <div className="authContainerTitleRow">
-                <h1 className='authContainerTitle'>{authState === "login" ? "Login" : "Sign Up"}</h1>
+                <h1 className='containerTitle authContainerTitle'>{authState === "login" ? "Login" : "Sign Up"}</h1>
             </div>
             <div className="pageDetailsContainer">
                 <div className="formContainer">
