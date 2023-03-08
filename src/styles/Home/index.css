@@ -1,0 +1,81 @@
+
+.appName {
+    margin-top: 0;
+    color: #f00;
+    font-weight: 900;
+    opacity: 0.75;
+}
+
+.callToActionText {
+    margin-top: 7vh;
+    font-weight: 700;
+    font-size: 1.33em;
+}
+
+.col {
+    width: 50%;
+}
+
+.containerTitle {
+    margin-bottom: 0;
+    font-size: 5em;
+}
+
+.downloadButton {
+    width: 40%;
+}
+
+.downloadImage {
+    width: 100%;
+}
+
+.downloadRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.heartFlexingImage {
+    width: 75%;
+}
+
+.healthyHeartCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.healthyHeartContainer {
+    margin-top: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+h2.containerTitle {
+    font-size: 3em;
+}
+
+.homeContainer {
+    margin-top: 7vh;
+}
+
+.homeHeaderCol:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeHeaderContainer {
+    display: flex;
+    width: 100%
+}
+
+.screenshot {
+    width: 50%;
+    border-radius: 20px;
+    border: 4px solid #000;
+    box-shadow: 0 0 5px -1px black;
+}

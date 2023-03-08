@@ -1,35 +1,49 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 
-import './index.css';
-import heart from '../imgs/backgrounds/heart.png';
-import Features from './Features';
-import ScreenShots from './ScreenShots';
+import '../../styles/Home/index.css';
+
+import HomeScreen from '../../assets/screens/bpn-home-screen.png';
+import HeartFlexing from '../../assets/hearts/heart-flexing.png';
 
 class Home extends Component {
 
     render() {
 
         return (
-            <Container className="home-container">
-                <Container className="hero-container">
-                    <Row>
-                        <Col md={4}> 
-                            <img className="heart-img" src={heart} alt="Heart figurine" />
-                        </Col>
-                        <Col md={8}>
-                            <h1 className="hero-headline">Heart Health</h1>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <h4 className="hero-subheadline">
-                            Nearly half of adults in the United States (108 million, or 45%) have hypertension - according to the <a className="content-link" href="https://www.cdc.gov/bloodpressure/facts.htm#:~:text=Nearly%20half%20of%20adults%20in,are%20taking%20medication%20for%20hypertension.&text=Only%20about%201%20in%204,have%20their%20condition%20under%20control." target ="_blank" rel="noreferrer">CDC</a>
-                        </h4>
-                    </Row>
-                </Container>
-                <Features />
-                <ScreenShots />
-            </Container>
+            <div className="homeContainer">
+                <header className="homeHeaderContainer">
+                    <div className="col homeHeaderCol">
+                        <img className="screenshot" src={HomeScreen} alt="Home screen screnshot" />
+                    </div>
+                    <div className="col homeHeaderCol">
+                        <h1 className="containerTitle">BPN</h1>
+                        <p className="appName">Blood Pressure Numbers</p>
+                        <p className="callToActionText">
+                        Take control of your blood pressure monitoring with our app - the ultimate tool for hypertension and hypotension management.
+                        </p>
+                        <div className="downloadRow">
+                            <div className="downloadButton">
+                                <a target="_blank" href="" className="downloadAnchor">
+                                    <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="" className="downloadImage" />
+                                </a>
+                            </div>
+                            <div className="downloadButton">
+                                <a target="_blank" href="" className="downloadAnchor">
+                                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="" className="downloadImage" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div className="healthyHeartContainer">
+                    <div className="col healthyHeartCol">
+                        <img className="heartFlexingImage" src={HeartFlexing} alt="Healthy Heart Flexing" />
+                    </div>
+                    <div className="col healthyHeartCol">
+                        <h2 className="containerTitle">Healthy Heart</h2>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
