@@ -1,0 +1,53 @@
+
+.articleContainer {
+    width: 95%;
+    margin: 3vh auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.articleContentCol {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.articleDescription, .articleTitle {
+    color: #fff;
+}
+
+.articleDescription {
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.articleDescriptionRow, .articleTitleRow {
+    width: 100%;
+}
+
+.articleImage {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px -1px black;
+}
+
+.articleImgCol {
+    width: 33%;
+}
+
+.articleTitle {
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+
+.urlAnchor {
+    text-decoration: none;
+}
+
+.urlAnchor:hover {
+    text-decoration: underline;
+}
