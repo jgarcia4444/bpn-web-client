@@ -1,0 +1,14 @@
+@media only screen and (max-width: 680px) {
+    .featureCardsContainer {
+        flex-direction: column;
+    }
+    .homeHeaderCol, .healthyHeartCol {
+        width: 100%;
+        margin-bottom: 3vh;
+        transition: all 400ms ease-out;
+    }
+    .homeHeaderContainer, .healthyHeartContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}

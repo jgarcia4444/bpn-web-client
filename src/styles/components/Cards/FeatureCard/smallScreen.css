@@ -1,0 +1,14 @@
+@media only screen and (max-width: 680px) {
+    .featureCardContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2vh;
+        transition: all 400ms ease-out;
+    }
+    .featureImage, .featureCardInfoContainer {
+        width: 48%;
+    }
+}
