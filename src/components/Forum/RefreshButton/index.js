@@ -3,10 +3,10 @@ import {FiRefreshCw} from 'react-icons/fi';
 
 import '../../../styles/Forum/RefreshButton/index.css';
 
-const RefreshButton = () => {
+const RefreshButton = ({handleClick}) => {
 
     return (
-        <div className="refreshButton">
+        <div onClick={handleClick} className="refreshButton">
             <FiRefreshCw color={"#fff"} size={24} />
         </div>
     )
