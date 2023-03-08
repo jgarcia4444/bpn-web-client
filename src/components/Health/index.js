@@ -20,6 +20,9 @@ const Health = () => {
             <div className="healthContainer">
                 <h1 className="containerTitle">Heart Healthy Articles</h1>
                 {renderArticles()}
+                <div className="nextArticlesDateRow">
+                    <small>Articles will be changed 03/15/2023 at 5:00PM PST.</small>
+                </div>
             </div>
         )
 }
