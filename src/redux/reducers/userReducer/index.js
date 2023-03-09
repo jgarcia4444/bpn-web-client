@@ -9,6 +9,21 @@ const initialState = {
 
 const userReducer = (state=initialState, action) => {
     switch(action.type) {
+        case "LOGIN_SUCCESS":
+            return {
+                ...initialState,
+                ...action.userInfo,
+            }
+        case "LOGIN_ERROR":
+            return {
+                ...initialState,
+                loginErrors: action.errors
+            }
+        case "LOGGING_IN":
+            return {
+                ...initialState,
+                loading: true,
+            }
         case "LOGOUT":
             return {
                 ...initialState,

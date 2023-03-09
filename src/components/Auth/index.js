@@ -10,8 +10,9 @@ import '../../styles/Auth/smallScreen.css';
 import '../../styles/global.css';
 
 import signUp from '../../redux/actions/userActions/signUp';
+import login from '../../redux/actions/userActions/login';
 
-const Auth = ({signUp, user}) => {
+const Auth = ({signUp, user, login}) => {
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -71,7 +72,11 @@ const Auth = ({signUp, user}) => {
     const handleAuthClick = () => {
         if (authState === 'login') {
             if (email !== "" && password !== "") {
-                // trigger login action
+                let userInfo = {
+                    email,
+                    password
+                };
+                login(userInfo);
             }
         } else {
             if ((email !== "" && password !== "") && confirmPassword !== "") {
@@ -166,6 +171,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         signUp: userInfo => dispatch(signUp(userInfo)),
+        login: userInfo => dispatch(login(userInfo)),
     }
 }
 
