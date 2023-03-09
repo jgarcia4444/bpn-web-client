@@ -12,7 +12,9 @@ import '../../styles/global.css';
 import signUp from '../../redux/actions/userActions/signUp';
 import login from '../../redux/actions/userActions/login';
 
-const Auth = ({signUp, user, login}) => {
+const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
+
+    const {signUpErrors, loginErrors} = user
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -88,7 +90,7 @@ const Auth = ({signUp, user, login}) => {
                     }
                     signUp(userInfo);
                 } else {
-                    // passwords don't match
+                    raisePasswordMatchError();
                 }
             }
         }
@@ -117,7 +119,7 @@ const Auth = ({signUp, user, login}) => {
     }
 
     useEffect(() => {
-        if (user.username !== "") {
+        if (user.username !== "" && (loginErrors.length === 0 && signUpErrors.length === 0)) {
             navigate(`/user/account/${username}`);
         }
     },[user.username])
@@ -172,6 +174,7 @@ const mapDispatchToProps = dispatch => {
     return {
         signUp: userInfo => dispatch(signUp(userInfo)),
         login: userInfo => dispatch(login(userInfo)),
+        raisePasswordMatchError: () => dispatch({type: "SIGN_UP_ERROR",errors: [{type: "Password", message: "Password and the password confirmation do not match."}]})
     }
 }
 
