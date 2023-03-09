@@ -1,0 +1,27 @@
+
+.forumMessage {
+    background-color: #fff;
+    width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #f00;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.forumMessageContainer {
+}
+
+.forumMessageRow {
+    width: 100%;
+    margin: 3vh auto;
+}
+
+.forumMessageUsername {
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 900;
+}

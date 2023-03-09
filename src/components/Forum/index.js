@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import '../../styles/Forum/index.css';
 
@@ -8,6 +8,8 @@ import ForumMessageInput from './ForumMessageInput';
 import SendMessageButton from './SendMessageButton';
 
 const Forum = () => {
+
+    const [messageValue, setMessageValue] = useState("");
 
     const handleSendClick = () => {
         console.log("SEND CLICKED!!!");
@@ -19,12 +21,12 @@ const Forum = () => {
 
     return (
         <div className="forumContainer">
-            <h1 className="containerTitle">Forum</h1>
             <div className="refreshForumRow">
+            <h1 className="containerTitle">Forum</h1>
                 <RefreshButton handleClick={handleRefreshClick} />
             </div>
             <ForumContainer />
-            <ForumMessageInput />
+            <ForumMessageInput messageValue={messageValue} handleChange={e => setMessageValue(e.target.value)} />
             <div className="sendMessageButtonRow">
                 <SendMessageButton handleClick={handleSendClick} />
             </div>

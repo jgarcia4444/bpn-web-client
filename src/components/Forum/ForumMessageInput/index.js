@@ -1,16 +1,19 @@
 import React, {useState} from 'react'
 
-const ForumMessageInput = () => {
+import '../../../styles/Forum/ForumMessageInput/index.css';
+
+const ForumMessageInput = ({messageValue, handleChange}) => {
 
     const [forumMessage, setForumMessage] = useState("");
 
     const handleTextChange = (e) => {
         console.log("Text area value changed.",e)
+        setForumMessage(e.target.value);
     }
 
     return (
         <div className="forumMessageInputContainer">
-            <textarea value={forumMessage} onChange={handleTextChange} name="forumInput" cols="30" rows="10">{forumMessage}</textarea>
+            <input placeholder="Write a message..." value={messageValue} onChange={handleChange} name="forumInput" className="messageInput" />
         </div>
     )
 }

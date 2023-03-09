@@ -2,3 +2,16 @@
 .forumContainer {
     margin-top: 7vh;
 }
+
+.refreshForumRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sendMessageButtonRow {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

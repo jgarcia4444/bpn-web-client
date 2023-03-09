@@ -1,6 +1,8 @@
 
 import React from 'react'
 
+import '../../../../styles/Forum/ForumContainer/ForumMessage/index.css';
+
 const ForumMessage = ({messageInfo}) => {
 
     const {username, message} = messageInfo;

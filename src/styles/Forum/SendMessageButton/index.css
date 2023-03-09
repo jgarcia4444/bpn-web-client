@@ -1,0 +1,16 @@
+
+.sendMessageButton {
+    background-color: #f00;
+    border-radius: 5px;
+    padding: 1vh 7vw;
+    transition: all 400ms ease-out;
+    font-weight: 900;
+    color: #fff;
+    font-size: 1.25em;
+}
+
+.sendMessageButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px -2px black;
+    transform: scale(1.05);
+}

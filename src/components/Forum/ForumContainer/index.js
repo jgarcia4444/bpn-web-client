@@ -3,6 +3,8 @@ import React from 'react';
 
 import ForumMessage from './ForumMessage.js';
 
+import '../../../styles/Forum/ForumContainer/index.css';
+
 const ForumContainer = () => {
     const messages = [{username: "Test", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}, {username: "Test2", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}];
 
@@ -12,7 +14,6 @@ const ForumContainer = () => {
 
     return (
         <div className="forumMessagesContainer">
-            Forum
             {renderMessages()}
         </div>
     )
