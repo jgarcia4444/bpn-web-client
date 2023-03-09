@@ -16,5 +16,5 @@ const reducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 
-export const store = configureStore({reducer: persistReducer, middleware: [thunk]});
+export const store = configureStore({reducer: persistedReducer, middleware: [thunk]});
 export const persistor = persistStore(store);

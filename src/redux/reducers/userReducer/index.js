@@ -9,6 +9,10 @@ const initialState = {
 
 const userReducer = (state=initialState, action) => {
     switch(action.type) {
+        case "LOGOUT":
+            return {
+                ...initialState,
+            }
         case "SIGN_UP_SUCCESS":
             return {
                 ...initialState,
