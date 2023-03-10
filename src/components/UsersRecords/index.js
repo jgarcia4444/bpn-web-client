@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import {FiLoader} from 'react-icons/fi';
 
 import '../../styles/UserRecords/index.css';
@@ -25,13 +25,15 @@ const UsersRecords = ({recordsReducer, fetchRecords, userId}) => {
                     <FiLoader className="loader" color="#f00" size={48} />
                 :
                     records.length !== 0  ?
-                        <LineChart width={800} height={300} data={records}>
+                    <ResponsiveContainer width="100%" height={300}>
+                        <LineChart data={records}>
                             <Line type="monotone" dataKey="systolic" stroke="#f00"/>
                             <Line type="monotone" dataKey="diastolic" stroke="#f66"/>
                             <XAxis />
                             <YAxis />
                             <Tooltip />
                         </LineChart>
+                    </ResponsiveContainer>
                     :
                         <p>No records have been recorded yet...</p>
                     
