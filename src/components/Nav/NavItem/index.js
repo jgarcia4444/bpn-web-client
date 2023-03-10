@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-
 import {useNavigate} from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import '../../../styles/Nav/NavItem/index.css';
 
-const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack }) => {
+const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, username, logout }) => {
 
     const {label, to, icon} = itemInfo;
 
@@ -40,16 +40,40 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack }) =>
                 {icon !== undefined && icon}
                 {nextLevelMenu === true &&
                     <div className="dropdownMenu">
-                        <div onClick={() => handleDropdownClick("login")} className="dropdownMenuRow">
-                            Login
-                        </div>
-                        <div onClick={() => handleDropdownClick("sign-up")} className="dropdownMenuRow">
-                            Sign Up
-                        </div>
+                        {username === "" ?
+                            <>
+                                <div onClick={() => handleDropdownClick("login")} className="dropdownMenuRow">
+                                    Login
+                                </div>
+                                <div onClick={() => handleDropdownClick("sign-up")} className="dropdownMenuRow">
+                                    Sign Up
+                                </div>
+                            </>
+                        :
+                            <div onClick={logout} className="dropdownMenuRow">
+                                Logout
+                            </div>
+                        }
                     </div>
+                
                 }
         </div>
     )
 }
 
-export default NavItem;
+const mapStateToProps = state => {
+    return {
+        username: state.user.username,
+    }
+}
+
+const mapDisaptchToProps = dispatch => {
+    return {
+        logout: () => dispatch({type: "LOGOUT"}),
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDisaptchToProps
+)(NavItem);
