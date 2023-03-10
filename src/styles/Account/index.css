@@ -1,0 +1,15 @@
+
+.accountContainer {
+    margin-top: 7vh;
+}
+
+.userInfoCol {
+    width: 50%;
+}
+
+.userInfoRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5vh;
+}

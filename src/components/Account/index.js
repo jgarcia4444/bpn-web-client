@@ -2,6 +2,10 @@ import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import '../../styles/Account/index.css';
+
+import UsersRecords from '../UsersRecords';
+
 const Account = ({user, logout}) => {
 
     const navigate = useNavigate();
@@ -16,8 +20,18 @@ const Account = ({user, logout}) => {
 
     return (
         <div className="accountContainer">
-            Username: {username}, Email: {email}
-            <div onClick={logout}>Logout Button</div>
+            <h1 className="containerTitle">Account</h1>
+            <div className="userInfoRow">
+                <div className="userInfoCol">
+                    <h4 className="userInfoLabel">Username</h4>
+                    {username}
+                </div>
+                <div className="userInfoCol">
+                    <h4 className="userInfoLabel">Email</h4>
+                    {email}
+                </div>
+            </div>
+            <UsersRecords />
         </div>
     )
 }

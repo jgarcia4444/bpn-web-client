@@ -4,6 +4,7 @@ import {persistReducer, persistStore} from "redux-persist";
 
 import userReducer from "./reducers/userReducer";
 import thunk from "redux-thunk";
+import recordsReducer from "./reducers/userReducer/recordsReducer";
 
 const persistConfig = {
     key: "BPN-WEB",
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
     user: userReducer,
+    recordsReducer: recordsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
