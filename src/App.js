@@ -13,6 +13,8 @@ import Nav from './components/Nav';
 import Health from './components/Health';
 import Forum from './components/Forum';
 import Auth from './components/Auth';
+import Account from './components/Account';
+
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './redux/store';
@@ -32,6 +34,7 @@ class App extends Component {
                 <Route path="/forum" element={<Forum />} />
                 <Route path="/contact" element={<Contact />}/>
                 <Route path="/auth" element={<Auth />} />
+                <Route path={"/user/account"} element={<Account />} />
               </Routes>
             </div>
           </Router>

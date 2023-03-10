@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-const Account = ({user}) => {
+const Account = ({user, logout}) => {
 
     const navigate = useNavigate();
 

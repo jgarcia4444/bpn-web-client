@@ -2,6 +2,7 @@
 const initialState = {
     email: "",
     username: "",
+    userId: "",
     loading: false,
     signUpErrors: [],
     loginErrors: [],

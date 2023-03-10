@@ -4,13 +4,13 @@ import '../../styles/components/FormInput/index.css';
 
 const FormInput = ({inputInfo}) => {
 
-    console.log("Input Info from the form input", inputInfo);
-
     const {value, changeFunction, label, icon} = inputInfo;
 
     const configureType = () => {
         if (label === "Email") {
             return "email"
+        } else if (label === "Username") {
+            return "text"
         } else {
             return "password";
         }

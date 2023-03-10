@@ -9,7 +9,7 @@ const login = userInfo => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({user_info: userInfo})
+        body: JSON.stringify({login_info: userInfo})
     };
     return async dispatch => {
         dispatch({type: "LOGGING_IN"});

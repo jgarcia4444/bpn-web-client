@@ -3,6 +3,7 @@ import Urls from "../../../config/network/Urls";
 const {baseUrl} = Urls;
 
 const signUp = (userInfo) => {
+    console.log("Sign Up action triggered!!!", userInfo);
     let url = `${baseUrl}/users`;
     let options = {
         method: "POST",
@@ -10,7 +11,7 @@ const signUp = (userInfo) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            user_info: {
+            new_user_info: {
                 ...userInfo
             },
         })
