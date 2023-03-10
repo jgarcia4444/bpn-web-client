@@ -1,14 +1,14 @@
 
 .forumMessage {
-    background-color: #fff;
+    background-color: #f00;
     width: 50%;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: #f00;
-    font-weight: 500;
+    color: #fff;
+    font-weight: 700;
     font-family: sans-serif;
 }
 
@@ -17,11 +17,11 @@
 
 .forumMessageRow {
     width: 100%;
-    margin: 3vh auto;
+    margin: 1vh auto;
 }
 
 .forumMessageUsername {
     margin-bottom: 0;
-    color: #fff;
+    color: #f00;
     font-weight: 900;
 }

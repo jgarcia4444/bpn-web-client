@@ -6,7 +6,7 @@ import ForumMessage from './ForumMessage.js';
 import '../../../styles/Forum/ForumContainer/index.css';
 
 const ForumContainer = () => {
-    const messages = [{username: "Test", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}, {username: "Test2", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}];
+    const messages = [{username: "Test", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}, {username: "Test2", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"},{username: "Test", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}, {username: "Test2", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}];
 
     const renderMessages = () => {
         return messages.map((message, i) => <ForumMessage key={`${i}-${message.username}`} messageInfo={message} />);

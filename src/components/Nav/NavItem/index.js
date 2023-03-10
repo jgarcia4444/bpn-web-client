@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import '../../../styles/Nav/NavItem/index.css';
@@ -9,17 +9,32 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, user
     const {label, to, icon} = itemInfo;
 
     const navigate = useNavigate();
+    const location = useLocation()
 
     const [nextLevelMenu, setNextLevelMenu] = useState(false);
 
     const handleNavClick = () => {
+        const {pathname} = location;
         if (icon !== undefined) {
-            if (nextLevelMenu === true) {
-                setNextLevelMenu(false);
+            if (username !== "") {
+                if (pathname === '/user/account') {
+                    if (nextLevelMenu === true) {
+                        setNextLevelMenu(false);
+                    } else {
+                        setNextLevelMenu(true);
+                    }
+                } else {
+                    navigate('/user/account');
+                }
             } else {
-                setNextLevelMenu(true);
+                if (nextLevelMenu === true) {
+                    setNextLevelMenu(false);
+                } else {
+                    setNextLevelMenu(true);
+                }
             }
         } else {
+            setNextLevelMenu(false);
             navigate(to);
         }
     }
