@@ -1,7 +1,11 @@
 
+.flexRight {
+    justify-content: flex-end;
+}
+
 .forumMessage {
     background-color: #f00;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -13,15 +17,21 @@
 }
 
 .forumMessageContainer {
+    width: 50%;
 }
 
 .forumMessageRow {
     width: 100%;
     margin: 1vh auto;
+    display: flex;
 }
 
 .forumMessageUsername {
     margin-bottom: 0;
     color: #f00;
     font-weight: 900;
+}
+
+.userMessage {
+    background-color: #a22;
 }

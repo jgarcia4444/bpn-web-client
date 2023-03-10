@@ -1,19 +1,20 @@
 
 import React from 'react'
+import { connect } from 'react-redux';
 
 import '../../../../styles/Forum/ForumContainer/ForumMessage/index.css';
 
-const ForumMessage = ({messageInfo}) => {
+const ForumMessage = ({messageInfo, user}) => {
 
     const {username, message} = messageInfo;
 
     return (
-        <div className="forumMessageRow">
+        <div className={`forumMessageRow ${user.username === username ? "flexRight" : ""}`}>
             <div className="forumMessageContainer">
                 <div className="forumMessageUsernameRow">
                     <h5 className="forumMessageUsername">{username}</h5>
                 </div>
-                <div className="forumMessage">
+                <div className={`forumMessage ${user.username === username ? "userMessage" : ""}`}>
                     {message}
                 </div>
             </div>
@@ -21,4 +22,13 @@ const ForumMessage = ({messageInfo}) => {
     )
 }
 
-export default ForumMessage
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    null
+)(ForumMessage);
