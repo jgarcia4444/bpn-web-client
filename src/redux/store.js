@@ -4,7 +4,7 @@ import {persistReducer, persistStore} from "redux-persist";
 
 import userReducer from "./reducers/userReducer";
 import thunk from "redux-thunk";
-import recordsReducer from "./reducers/userReducer/recordsReducer";
+import recordsReducer from "./reducers/recordsReducer";
 
 const persistConfig = {
     key: "BPN-WEB",

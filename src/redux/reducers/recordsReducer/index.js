@@ -2,6 +2,7 @@ const initialState = {
     loadingRecords: false,
     recordsLoadError: "",
     records: [],
+    recordsFetched: false,
 }
 
 const recordsReducer = (state=initialState, action) => {
@@ -10,6 +11,7 @@ const recordsReducer = (state=initialState, action) => {
             return {
                 ...initialState,
                 records: action.records,
+                recordsFetched: true,
             }
         case "RECORDS_LOAD_ERROR":
             return {
