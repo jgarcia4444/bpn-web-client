@@ -5,12 +5,12 @@
 
 .messageInput {
     width: 100%;
-    border: 3px solid #f00;
+    box-shadow: 0 0 4px 1px #f00 inset;
     border-radius: 5px;
     padding: 5px;
-    color: #fff;
+    color: #f00;
     font-weight: 900;
-    background-color: rgba(255, 0, 0, 0.25);
     font-size: 1.25em;
     margin-bottom: 1vh;
+    border: none;
 }

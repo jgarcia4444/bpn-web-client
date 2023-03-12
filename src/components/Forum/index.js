@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
 
 import '../../styles/Forum/index.css';
 
@@ -7,12 +8,17 @@ import ForumContainer from './ForumContainer';
 import ForumMessageInput from './ForumMessageInput';
 import SendMessageButton from './SendMessageButton';
 
-const Forum = () => {
+const Forum = ({username, sendMessage}) => {
 
     const [messageValue, setMessageValue] = useState("");
 
     const handleSendClick = () => {
         console.log("SEND CLICKED!!!");
+        let messageInfo = {
+            username,
+            message: messageValue,
+        }
+        sendMessage(messageInfo);
     }
 
     const handleRefreshClick = () => {
@@ -34,4 +40,19 @@ const Forum = () => {
     )
 }
 
-export default Forum;
+const mapStateToProps = state => {
+    return {
+        username: state.user.username,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        sendMessage: messageInfo => dispatch(sendMessage(messageInfo))
+    }
+}
+
+export default (
+    mapStateToProps,
+    mapDispatchToProps
+)(Forum);
