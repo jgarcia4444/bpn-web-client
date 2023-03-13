@@ -7,18 +7,28 @@ import RefreshButton from './RefreshButton';
 import ForumContainer from './ForumContainer';
 import ForumMessageInput from './ForumMessageInput';
 import SendMessageButton from './SendMessageButton';
+import AuthAlert from '../Alerts/AuthAlert';
+
+import sendMessage from '../../redux/actions/forumActions/sendMessage';
 
 const Forum = ({username, sendMessage}) => {
 
     const [messageValue, setMessageValue] = useState("");
+    const [loginAlert, setLoginAlert] = useState(false);
 
     const handleSendClick = () => {
-        console.log("SEND CLICKED!!!");
-        let messageInfo = {
-            username,
-            message: messageValue,
+        if (messageValue !== "") {
+            if (username === "") {
+                // alert user they need to login or sign up.
+                setLoginAlert(true);
+            } else {
+                let messageInfo = {
+                    username,
+                    message: messageValue,
+                }
+                sendMessage(messageInfo);
+            }
         }
-        sendMessage(messageInfo);
     }
 
     const handleRefreshClick = () => {
@@ -27,6 +37,7 @@ const Forum = ({username, sendMessage}) => {
 
     return (
         <div className="forumContainer">
+            {loginAlert === true && <AuthAlert dismissAlert={() => setLoginAlert(false)} />}
             <div className="refreshForumRow">
             <h1 className="containerTitle">Forum</h1>
                 <RefreshButton handleClick={handleRefreshClick} />
@@ -52,7 +63,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default (
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Forum);
