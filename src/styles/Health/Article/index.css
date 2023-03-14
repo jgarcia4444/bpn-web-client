@@ -1,7 +1,7 @@
 
 .articleContainer {
     width: 95%;
-    margin: 3vh auto;
+    margin: 7vh auto;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -16,7 +16,7 @@
 }
 
 .articleDescription, .articleTitle {
-    color: #fff;
+    color: #f00;
 }
 
 .articleDescription {
