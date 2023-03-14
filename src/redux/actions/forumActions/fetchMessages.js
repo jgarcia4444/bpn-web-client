@@ -2,7 +2,7 @@ import Urls from "../../../config/network/Urls";
 const {baseUrl} = Urls;
 
 const fetchMessages = () => {
-    let url = `${baseUrl}/messages`;
+    let url = `${baseUrl}/forum-messages`;
     return async dispatch => {
         dispatch({type: "LOADING_MESSAGES"});
         fetch(url)

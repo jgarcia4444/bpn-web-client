@@ -3,6 +3,7 @@ const initialState = {
     messages: [],
     loadingMessages: false,
     messagesLoadError: "",
+    fetchServed: false,
 }
 
 const forumReducer = (state=initialState, action) => {
@@ -26,11 +27,13 @@ const forumReducer = (state=initialState, action) => {
             return {
                 ...initialState,
                 messagesLoadError: action.message,
+                fetchServed: true,
             }
         case "MESSAGES_LOAD_SUCCESS":
             return {
                 ...initialState,
-                messages: action.messages
+                messages: action.messages,
+                fetchServed: true,
             }
         case "LOADING_MESSAGES":
             return {

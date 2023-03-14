@@ -3,7 +3,7 @@ import Urls from '../../../config/network/Urls';
 const {baseUrl} = Urls;
 
 const sendMessage = messageInfo => {
-    let url = `${baseUrl}/forum/add`;
+    let url = `${baseUrl}/forum-messages/add`;
     let options = {
         method: "POST",
         headers: {
