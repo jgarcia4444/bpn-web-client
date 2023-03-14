@@ -2,12 +2,40 @@
 .healthArticlesContainer {
     height: 55vh;
     width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 0 5px -1px #f00 inset;
     overflow-y: auto;
+}
+
+.healthArticlesContainer::-webkit-scrollbar {
+    width: 2vw;
+}
+
+.healthArticlesContainer::-webkit-scrollbar-track {
+    background: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 3px -1px #f00 inset;
+}
+
+.healthArticlesContainer::-webkit-scrollbar-thumb {
+    background: #f00;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.healthArticlesContainer::-webkit-scrollbar-thumb:hover {
+    background: #e00;
 }
 
 .healthContainer {
     width: 100%;
     margin-top: 7vh;
+}
+
+@media (max-width: 767px) {
+    .containerTitle {
+        font-size: 2em;
+    }
+    .healthArticlesContainer {
+        height: 65vh;
+    }
 }
