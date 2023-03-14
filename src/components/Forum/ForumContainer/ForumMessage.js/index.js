@@ -7,6 +7,7 @@ import '../../../../styles/Forum/ForumContainer/ForumMessage/index.css';
 const ForumMessage = ({messageInfo, user}) => {
 
     const {username, message} = messageInfo;
+    console.log("Username: ", username);
 
     return (
         <div className={`forumMessageRow ${user.username === username ? "flexRight" : ""}`}>

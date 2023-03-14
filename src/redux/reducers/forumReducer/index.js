@@ -37,7 +37,7 @@ const forumReducer = (state=initialState, action) => {
             }
         case "LOADING_MESSAGES":
             return {
-                ...initialState,
+                ...state,
                 loadingMessages: true,
             }
         default: 

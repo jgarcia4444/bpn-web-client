@@ -8,12 +8,13 @@ import SpinningLoader from '../../Loaders/SpinningLoader/index.js';
 import '../../../styles/Forum/ForumContainer/index.css';
 
 const ForumContainer = ({forum}) => {
-    // const messages = [{username: "Test", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}, {username: "bball4", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"},{username: "Test", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}, {username: "bball4", message: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"}];
 
     const {messages, loadingMessages} = forum;
 
     const renderMessages = () => {
-        return messages.map((message, i) => <ForumMessage key={`${i}-${message.username}`} messageInfo={message} />);
+        return messages.length > 0 ? messages.map((message, i) => <ForumMessage key={`${i}-${message.username}`} messageInfo={message} />)
+        :
+        (<p>No Messages saved yet...</p>)
     };
 
     return (

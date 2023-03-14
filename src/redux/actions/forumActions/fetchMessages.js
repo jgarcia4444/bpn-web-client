@@ -8,8 +8,9 @@ const fetchMessages = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
+                console.log("data returned from fetch-messages route", data);
                 let {success} = data;
-                if (success === data) {
+                if (success === true) {
                     let {messages} = data;
                     return dispatch({type: "MESSAGES_LOAD_SUCCESS", messages})
                 } else {

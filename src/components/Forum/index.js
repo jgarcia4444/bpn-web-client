@@ -16,7 +16,6 @@ const Forum = ({username, sendMessage, fetchMessages, forum}) => {
 
     const [messageValue, setMessageValue] = useState("");
     const [loginAlert, setLoginAlert] = useState(false);
-    const [initialFetchServed, setInitialFetchServed] = useState(false);
 
     const {messages, fetchServed} = forum;
 
