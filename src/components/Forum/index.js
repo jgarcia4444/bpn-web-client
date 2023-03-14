@@ -34,7 +34,7 @@ const Forum = ({username, sendMessage, fetchMessages, forum}) => {
     }
 
     const handleRefreshClick = () => {
-        console.log("REFRESH CLICKED!!!");
+        fetchMessages();
     }
 
     useEffect(() => {
