@@ -25,6 +25,9 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [username, setUsername] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+    const [usernameError, setUsernameError] = useState("");
 
 
     const emailInputInfo = {
@@ -32,7 +35,7 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
         value: email,
         changeFunction: e => setEmail(e.target.value),
         icon: <FiMail color={"#fff"} size={20} />,
-        error: ""
+        error: emailError,
     }
 
     const passwordInputInfo = {
@@ -40,7 +43,7 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
         value: password,
         changeFunction: e => setPassword(e.target.value),
         icon: <FiLock color={"#fff"} size={20} />,
-        error: ""
+        error: passwordError
     }
 
     const confirmPasswordInputInfo = {
@@ -56,7 +59,7 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
         value: username,
         changeFunction: e => setUsername(e.target.value),
         icon: <FiUser color={"#fff"} size={20} />,
-        error: ""
+        error: usernameError,
     }
 
     const inputs = [usernameInputInfo, emailInputInfo, passwordInputInfo, confirmPasswordInputInfo];
@@ -122,8 +125,41 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
         )
     }
 
+    const clearErrors = () => {
+        setEmailError("");
+        setPasswordError("");
+        setUsernameError("");
+    }
+
+    const configureFormErrors = () => {
+        clearErrors("")
+        if (authState === "login") {
+            if (loginErrors.length > 0) {
+                loginErrors.forEach(error => {
+                    if (error.errorType === "GENERAL" || error.errorType === "EMAIL") {
+                        setEmailError(error.message);
+                    } else {
+                        setPasswordError(error.message);
+                    }
+                })
+            }
+        } else {
+            if (signUpErrors.length > 0) {
+                signUpErrors.forEach(error => {
+                    if (error.errorType === "GENERAL" || error.errorType === "EMAIL") {
+                        setEmailError(error.message);
+                    } else if (error.errorType === "USERNAME") {
+                        setUsernameError(error.message);
+                    } else {
+                        setPasswordError(error.message);
+                    }
+                })
+            }
+        }
+    }
+
     useEffect(() => {
-        console.log("User Info", user);
+        configureFormErrors()
         if (user.email !== "" && (loginErrors.length === 0 && signUpErrors.length === 0)) {
             navigate(`/user/account`);
         }
