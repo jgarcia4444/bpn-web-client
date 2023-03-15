@@ -22,6 +22,7 @@ const AdsComponent = (props) => {
             data-ad-slot={dataAdSlot}
             data-ad-format="auto"
             data-full-width-responsive="true"
+            data-adtest="on"
      ></ins>
     )
 }
