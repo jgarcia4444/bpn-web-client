@@ -4,7 +4,7 @@ import '../../styles/components/FormInput/index.css';
 
 const FormInput = ({inputInfo}) => {
 
-    const {value, changeFunction, label, icon} = inputInfo;
+    const {value, changeFunction, label, icon, error} = inputInfo;
 
     const configureType = () => {
         if (label === "Email") {
@@ -18,6 +18,11 @@ const FormInput = ({inputInfo}) => {
 
     return (
         <div className="inputContainer">
+            {error !== "" &&
+                <div className="inputErrorRow">
+                    <p className="inputError">{error}</p>
+                </div>
+            }
             <div className="inputLabelRow">
                 <p className="inputLabel">{label}</p>
             </div>

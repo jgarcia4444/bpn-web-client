@@ -163,7 +163,7 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
         if (user.email !== "" && (loginErrors.length === 0 && signUpErrors.length === 0)) {
             navigate(`/user/account`);
         }
-    },[user.email])
+    },[user.email, loginErrors, signUpErrors])
 
     return (
         <div className="authContainer">

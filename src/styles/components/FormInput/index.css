@@ -4,6 +4,28 @@
     width: 100%;
 }
 
+.inputError {
+    margin: 0;
+    color: #fff;
+    font-weight: 900;
+}
+
+.inputErrorRow {
+    animation-name: FadeIn;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
 .inputLabel {
     margin: 0;
 }
