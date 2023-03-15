@@ -119,10 +119,11 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
     }
 
     useEffect(() => {
-        if (user.username !== "" && (loginErrors.length === 0 && signUpErrors.length === 0)) {
+        console.log("User Info", user);
+        if (user.email !== "" && (loginErrors.length === 0 && signUpErrors.length === 0)) {
             navigate(`/user/account`);
         }
-    },[user.username])
+    },[user.email])
 
     return (
         <div className="authContainer">
