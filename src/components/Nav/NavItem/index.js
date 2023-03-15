@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import '../../../styles/Nav/NavItem/index.css';
 
-const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, username, logout }) => {
+const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, email, logout }) => {
 
     const {label, to, icon} = itemInfo;
 
@@ -16,7 +16,7 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, user
     const handleNavClick = () => {
         const {pathname} = location;
         if (icon !== undefined) {
-            if (username !== "") {
+            if (email !== "") {
                 if (pathname === '/user/account') {
                     if (nextLevelMenu === true) {
                         setNextLevelMenu(false);
@@ -55,7 +55,7 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, user
                 {icon !== undefined && icon}
                 {nextLevelMenu === true &&
                     <div className="dropdownMenu">
-                        {username === "" ?
+                        {email === "" ?
                             <>
                                 <div onClick={() => handleDropdownClick("login")} className="dropdownMenuRow">
                                     Login
@@ -78,7 +78,7 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, user
 
 const mapStateToProps = state => {
     return {
-        username: state.user.username,
+        email: state.user.email,
     }
 }
 
