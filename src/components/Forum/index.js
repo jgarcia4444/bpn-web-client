@@ -17,7 +17,7 @@ const Forum = ({username, sendMessage, fetchMessages, forum}) => {
     const [messageValue, setMessageValue] = useState("");
     const [loginAlert, setLoginAlert] = useState(false);
 
-    const {messages, fetchServed} = forum;
+    const {messages, fetchServed, messagesLoadError} = forum;
 
     const handleSendClick = () => {
         if (messageValue !== "") {
@@ -29,6 +29,9 @@ const Forum = ({username, sendMessage, fetchMessages, forum}) => {
                     message: messageValue,
                 }
                 sendMessage(messageInfo);
+                if (messagesLoadError === "") {
+                    setMessageValue("");
+                }
             }
         }
     }
@@ -47,7 +50,10 @@ const Forum = ({username, sendMessage, fetchMessages, forum}) => {
         <div className="forumContainer">
             {loginAlert === true && <AuthAlert dismissAlert={() => setLoginAlert(false)} />}
             <div className="refreshForumRow">
-            <h1 className="containerTitle">Forum</h1>
+                <h1 className="containerTitle">Forum</h1>
+                {messagesLoadError !== "" &&
+                    <p className="forumError">{messagesLoadError}</p>
+                }
                 <RefreshButton handleClick={handleRefreshClick} />
             </div>
             <ForumContainer />
