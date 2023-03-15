@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import '../../styles/Account/index.css';
@@ -13,22 +13,21 @@ const Account = ({user, addUsername}) => {
     const [newUsername, setNewUsername] = useState("");
 
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
-    const {username, email, userId} = user;
+    const {username, email, userId, updateUsernameError} = user;
 
     const handleAddUsername = () => {
-        if (username !== "") {
-            if (username.split('').length > 3) {
+        if (newUsername !== "") {
+            if (newUsername.split('').length > 3) {
                 let userInfo = {
                     user_id: userId,
                     username: newUsername
                 }
                 addUsername(userInfo);
             } else {
-
+                dispatch({type: "USER_UPDATE_ERROR", message: "Username must be 4 characters long at minimum."})
             }
-        } else {
-
         }
     }
 
@@ -46,19 +45,26 @@ const Account = ({user, addUsername}) => {
                     <h4 className="userInfoLabel">Username</h4>
                     {username === "" ?
                         <div className="newUsernameRow">
-                            <input 
-                                type="text" 
-                                className="newUsernameInput" 
-                                value={newUsername}
-                                onChange={e => setNewUsername(e.target.value)}
-                                placeholder="Add a username..."
-                            />
-                            <button
-                                className="addnewUsernameButton"
-                                onClick={handleAddUsername}
-                            >
-                                Add
-                            </button>
+                            <div className="usernameErrorRow">
+                                {updateUsernameError !== "" &&
+                                    <p className="updateUsernameError">{updateUsernameError}</p>
+                                }
+                            </div>
+                            <div className="usernameInputRow">
+                                <input 
+                                    type="text" 
+                                    className="newUsernameInput" 
+                                    value={newUsername}
+                                    onChange={e => setNewUsername(e.target.value)}
+                                    placeholder="Add a username..."
+                                />
+                                <button
+                                    className="addnewUsernameButton"
+                                    onClick={handleAddUsername}
+                                >
+                                    Add
+                                </button>
+                            </div>
                         </div>
                     :
                         username

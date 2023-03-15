@@ -6,10 +6,30 @@ const initialState = {
     loading: false,
     signUpErrors: [],
     loginErrors: [],
+    updateUsernameError: "",
 }
 
 const userReducer = (state=initialState, action) => {
     switch(action.type) {
+        case "UPDATING_USER":
+            return {
+                ...state,
+                loading: true,
+            }
+        case "USER_UPDATE_SUCCESS":
+            return {
+                ...state,
+                loading: false,
+                signUpErrors: [],
+                loginErrors: [],
+                username: action.username
+            }
+        case "USER_UPDATE_ERROR":
+            return {
+                ...state,
+                loading: false,
+                updateUsernameError: action.message,
+            }
         case "LOGIN_SUCCESS":
             return {
                 ...initialState,
