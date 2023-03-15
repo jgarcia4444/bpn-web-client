@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../../styles/Health/index.css';
+import AdsComponent from '../AdsComponent';
 
 import Article from './Article';
 
@@ -20,8 +21,11 @@ const Health = () => {
         return (
             <div className="healthContainer">
                 <h1 className="containerTitle">Heart Healthy Articles</h1>
-                <div className="healthArticlesContainer">
-                    {renderArticles()}
+                <div className="articlesOutsideContainer">
+                    <div className="healthArticlesContainer">
+                        {renderArticles()}
+                    </div>
+                    <AdsComponent dataAdSlot={"2507699485"}/>
                 </div>
                 <div className="nextArticlesDateRow">
                     <small>Articles will be changed 03/22/2023 at 5:00PM PST.</small>
