@@ -9,6 +9,7 @@ const login = userInfo => {
         headers: {
             "Content-Type": "application/json"
         },
+        mode: 'cors',
         body: JSON.stringify({login_info: userInfo})
     };
     return async dispatch => {
