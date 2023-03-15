@@ -7,9 +7,9 @@ const login = userInfo => {
     let options = {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'mode': 'cors'
         },
-        mode: 'no-cors',
         body: JSON.stringify({login_info: userInfo})
     };
     return async dispatch => {
