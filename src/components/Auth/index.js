@@ -31,28 +31,32 @@ const Auth = ({signUp, user, login, raisePasswordMatchError}) => {
         label: "Email",
         value: email,
         changeFunction: e => setEmail(e.target.value),
-        icon: <FiMail color={"#fff"} size={20} />
+        icon: <FiMail color={"#fff"} size={20} />,
+        error: ""
     }
 
     const passwordInputInfo = {
         label: "Password",
         value: password,
         changeFunction: e => setPassword(e.target.value),
-        icon: <FiLock color={"#fff"} size={20} />
+        icon: <FiLock color={"#fff"} size={20} />,
+        error: ""
     }
 
     const confirmPasswordInputInfo = {
         label: "Confirm Password",
         value: confirmPassword,
         changeFunction: e => setConfirmPassword(e.target.value),
-        icon: <FiLock color={"#fff"} size={20} />
+        icon: <FiLock color={"#fff"} size={20} />,
+        error: ""
     }
 
     const usernameInputInfo = {
         label: "Username",
         value: username,
         changeFunction: e => setUsername(e.target.value),
-        icon: <FiUser color={"#fff"} size={20} />
+        icon: <FiUser color={"#fff"} size={20} />,
+        error: ""
     }
 
     const inputs = [usernameInputInfo, emailInputInfo, passwordInputInfo, confirmPasswordInputInfo];
