@@ -8,8 +8,8 @@ const login = userInfo => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            'mode': 'cors'
         },
+        mode: 'no-cors',
         body: JSON.stringify({login_info: userInfo})
     };
     return async dispatch => {
