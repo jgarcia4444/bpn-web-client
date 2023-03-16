@@ -38,12 +38,12 @@ class Home extends Component {
                         </p>
                         <div className="downloadRow">
                             <div className="downloadButton">
-                                <a target="_blank" href="" className="downloadAnchor">
+                                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.jgar4444.bloodpressurenumbers" className="downloadAnchor">
                                     <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="" className="downloadImage" />
                                 </a>
                             </div>
                             <div className="downloadButton">
-                                <a target="_blank" href="" className="downloadAnchor">
+                                <a target="_blank" href="https://apps.apple.com/us/app/blood-pressure-numbers/id1534661419" className="downloadAnchor">
                                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="" className="downloadImage" />
                                 </a>
                             </div>
