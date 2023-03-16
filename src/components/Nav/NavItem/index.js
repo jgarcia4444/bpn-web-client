@@ -51,7 +51,7 @@ const NavItem = ({itemInfo, changeIconColorToWhite, changeIconColorToBlack, emai
             onClick={handleNavClick} 
             className="navItemContainer"
         >
-                {label !== "" && label}
+                {label !== "" && <span className="navItemValue">{label}</span>}
                 {icon !== undefined && icon}
                 {nextLevelMenu === true &&
                     <div className="dropdownMenu">

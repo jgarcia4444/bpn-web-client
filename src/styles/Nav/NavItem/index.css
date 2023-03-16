@@ -46,3 +46,9 @@
     cursor: pointer;
     color: #fff;
 }
+
+@media screen and (max-width: 680px) {
+    .navItemValue {
+        font-size: 12px;
+    }
+}
