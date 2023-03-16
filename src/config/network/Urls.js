@@ -4,5 +4,5 @@
 // baseUrl: "http://192.168.4.162:3000",
 
 export default {
-    baseUrl: 'https://54.215.197.214:80'
+    baseUrl: 'https://bpn-api.com'
 }
